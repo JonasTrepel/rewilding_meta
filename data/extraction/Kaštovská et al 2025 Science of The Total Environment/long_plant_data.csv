@@ -1,0 +1,103 @@
+Site,variable,raw_mean_high_megafauna,error_high_megafauna,n_high_megafauna,raw_mean_low_megafauna,error_low_megafauna,n_low_megafauna
+MBV,AG C/N ratio,35.1,3.5,4,40.3,4.9,4
+MTR,AG C/N ratio,36.1,3.1,4,41.6,2.1,4
+DOB,AG C/N ratio,20.3,1.5,4,23.3,3.8,4
+HAV,AG C/N ratio,24.2,2.6,4,28,2,4
+MAS,AG C/N ratio,21.2,1.5,4,24.5,3.3,4
+HRK,AG C/N ratio,22.1,3.5,4,25.2,2,4
+MBV,AG C/P ratio,828,296,4,1243,691,4
+MTR,AG C/P ratio,1068,189,4,844,181,4
+DOB,AG C/P ratio,365,52,4,393,121,4
+HAV,AG C/P ratio,532,111,4,436,104,4
+MAS,AG C/P ratio,329,65,4,447,60,4
+HRK,AG C/P ratio,706,89,4,455,83,4
+MBV,AG N/P ratio,23.3,6.7,4,28.9,11.6,4
+MTR,AG N/P ratio,29.5,3.5,4,20,3.4,4
+DOB,AG N/P ratio,18.3,3.6,4,17,2.5,4
+HAV,AG N/P ratio,22.3,3.5,4,15.3,3,4
+MAS,AG N/P ratio,16,3,4,18.7,0.6,4
+HRK,AG N/P ratio,33.1,2.8,4,18.3,2.9,4
+MBV,AG dry biomass,159,25,4,202,84,4
+MTR,AG dry biomass,116,18,4,197,16,4
+DOB,AG dry biomass,227,50,4,256,37,4
+HAV,AG dry biomass,78,19,4,91,15,4
+MAS,AG dry biomass,64,20,4,105,11,4
+HRK,AG dry biomass,75,6,4,148,29,4
+MBV,AG fresh biomass,410,60,4,502,226,4
+MTR,AG fresh biomass,260,38,4,407,16,4
+DOB,AG fresh biomass,821,109,4,708,198,4
+HAV,AG fresh biomass,228,17,4,274,76,4
+MAS,AG fresh biomass,228,91,4,347,5,4
+HRK,AG fresh biomass,213,57,4,508,84,4
+MBV,AG-C content,432,2.5,4,430,6.2,4
+MTR,AG-C content,435,1.7,4,436,2.3,4
+DOB,AG-C content,423,6,4,423,3.4,4
+HAV,AG-C content,439,2.8,4,436,3.8,4
+MAS,AG-C content,430,3.8,4,442,3.6,4
+HRK,AG-C content,436,3.6,4,425,5,4
+MBV,AG-N content,14.7,1.5,4,12.8,1.5,4
+MTR,AG-N content,14.4,1.4,4,12.4,0.8,4
+DOB,AG-N content,24.7,2.1,4,22.3,3.8,4
+HAV,AG-N content,22,2.9,4,18.5,1.2,4
+MAS,AG-N content,24.5,2.3,4,22.9,3,4
+HRK,AG-N content,24.2,4.6,4,20.1,2,4
+MBV,AG-P content,1.6,0.6,4,1.2,0.5,4
+MTR,AG-P content,1.1,0.2,4,1.5,0.3,4
+DOB,AG-P content,3.1,0.4,4,3,0.7,4
+HAV,AG-P content,2.4,0.4,4,2.9,0.6,4
+MAS,AG-P content,3.6,0.8,4,2.8,0.2,4
+HRK,AG-P content,1.7,0.2,4,2.5,0.4,4
+MBV,AG/BG,0.41,0.09,4,0.61,0.14,4
+MTR,AG/BG,0.5,0.21,4,0.6,0.17,4
+DOB,AG/BG,0.79,0.33,4,0.9,0.23,4
+HAV,AG/BG,0.24,0.07,4,0.32,0.07,4
+MAS,AG/BG,0.24,0.11,4,0.23,0.02,4
+HRK,AG/BG,0.2,0.03,4,0.48,0.22,4
+MBV,BG C/N ratio,53.5,1.9,4,58.4,10.5,4
+MTR,BG C/N ratio,57.5,10.5,4,63.6,10.2,4
+DOB,BG C/N ratio,40.6,14.4,4,42.2,8.9,4
+HAV,BG C/N ratio,47.3,4.3,4,43,4.9,4
+MAS,BG C/N ratio,46.4,3.8,4,42.3,0.6,4
+HRK,BG C/N ratio,55.8,11.1,4,53.2,13.1,4
+MBV,BG C/P ratio,1053,343,4,1381,376,4
+MTR,BG C/P ratio,1579,321,4,1522,370,4
+DOB,BG C/P ratio,553,90,4,564,214,4
+HAV,BG C/P ratio,779,232,4,928,186,4
+MAS,BG C/P ratio,1190,248,4,1129,112,4
+HRK,BG C/P ratio,1765,218,4,936,303,4
+MBV,BG N/P ratio,20.4,6.3,4,23.8,2.2,4
+MTR,BG N/P ratio,29,8.2,4,23.9,5.4,4
+DOB,BG N/P ratio,15.5,5.5,4,13.4,2.4,4
+HAV,BG N/P ratio,17.7,7.7,4,22.1,4.6,4
+MAS,BG N/P ratio,27,7.7,4,26.8,2.3,4
+HRK,BG N/P ratio,33,4.7,4,17.9,4.4,4
+MBV,BG dry biomass,486,111,4,402,111,4
+MTR,BG dry biomass,325,94,4,417,159,4
+DOB,BG dry biomass,399,56,4,509,212,4
+HAV,BG dry biomass,424,122,4,372,58,4
+MAS,BG dry biomass,380,91,4,551,86,4
+HRK,BG dry biomass,393,13,4,393,81,4
+MBV,BG-C content,407,5,4,383,22,4
+MTR,BG-C content,352,50,4,389,23,4
+DOB,BG-C content,333,38,4,292,42,4
+HAV,BG-C content,396,10,4,403,19,4
+MAS,BG-C content,419,12,4,409,5,4
+HRK,BG-C content,416,2,4,395,17,4
+MBV,BG-N content,9.2,0.2,4,8.4,1.7,4
+MTR,BG-N content,7.7,1.4,4,7.4,0.9,4
+DOB,BG-N content,10.5,2.4,4,8.7,2.2,4
+HAV,BG-N content,10.4,1.5,4,11.3,1.1,4
+MAS,BG-N content,11,1.2,4,11.3,0.1,4
+HRK,BG-N content,9.1,1.6,4,9.7,2.1,4
+MBV,BG-P content,1.1,0.34,4,0.8,0.22,4
+MTR,BG-P content,0.6,0.07,4,0.8,0.22,4
+DOB,BG-P content,1.6,0.36,4,1.6,0.55,4
+HAV,BG-P content,1.6,0.35,4,1.2,0.22,4
+MAS,BG-P content,1,0.13,4,1,0.1,4
+HRK,BG-P content,0.7,0.1,4,1.3,0.41,4
+MBV,RWC,0.61,0.03,4,0.59,0.03,4
+MTR,RWC,0.55,0.01,4,0.51,0.02,4
+DOB,RWC,0.71,0.06,4,0.56,0.12,4
+HAV,RWC,0.65,0.05,4,0.65,0.04,4
+MAS,RWC,0.71,0.03,4,0.67,0.03,4
+HRK,RWC,0.63,0.09,4,0.7,0.03,4

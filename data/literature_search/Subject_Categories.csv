@@ -1,0 +1,643 @@
+﻿Database,Area,QS_Subject_Area,Subject,ASJC_Code,Restrictive_exclusion
+ASJC (Scopus),Social Sciences and Management,Accounting and Finance,Accounting,1402,Exclude
+ASJC (Scopus),Social Sciences and Management,Accounting and Finance,Finance,2003,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Agricultural and Biological Sciences (all),1100,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Agricultural and Biological Sciences (miscellaneous),1101,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Agronomy and Crop Science,1102,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Animal Science and Zoology,1103,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Aquatic Science,1104,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,"Ecology, Evolution, Behavior and Systematics",1105,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Food Science,1106,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Forestry,1107,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Horticulture,1108,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Insect Science,1109,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Plant Science,1110,
+ASJC (Scopus),Life Sciences and Medicine,Agriculture and Forestry,Soil Science,1111,
+ASJC (Scopus),Life Sciences and Medicine,Anatomy and Physiology,Anatomy,2702,
+ASJC (Scopus),Life Sciences and Medicine,Anatomy and Physiology,Physiology,1314,
+ASJC (Scopus),Life Sciences and Medicine,Anatomy and Physiology,Physiology (medical),2737,
+ASJC (Scopus),Social Sciences and Management,Anthropology,Anthropology,3314,Exclude
+ASJC (Scopus),Arts and Humanities,Archaeology,Archeology (arts and humanities),1204,Exclude
+ASJC (Scopus),Social Sciences and Management,Archaeology,Archeology,3302,Exclude
+ASJC (Scopus),Arts and Humanities,Architecture / Built Environment,Architecture,2216,Exclude
+ASJC (Scopus),Engineering and Technology,Architecture / Built Environment,Building and Construction,2215,Exclude
+ASJC (Scopus),Social Sciences and Management,Architecture / Built Environment,Transportation,3313,Exclude
+ASJC (Scopus),Social Sciences and Management,Architecture / Built Environment,Urban Studies,3322,Exclude
+ASJC (Scopus),Engineering and Technology,Artificial Intelligence,Artificial Intelligence,1702,Exclude
+ASJC (Scopus),Arts and Humanities,Arts and Humanities,Arts and Humanities (all),1200,Exclude
+ASJC (Scopus),Arts and Humanities,Arts and Humanities,Arts and Humanities (miscellaneous),1201,Exclude
+ASJC (Scopus),Engineering and Technology,Biological Sciences,Biomedical Engineering,2204,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Aging,1302,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Applied Microbiology and Biotechnology,2402,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Biochemistry,1303,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,"Biochemistry, Genetics and Molecular Biology (all)",1300,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,"Biochemistry, Genetics and Molecular Biology (miscellaneous)",1301,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Biophysics,1304,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Biotechnology,1305,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Cancer Research,1306,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Cell Biology,1307,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Clinical Biochemistry,1308,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Developmental Biology,1309,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Endocrinology,1310,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Genetics,1311,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Immunology,2403,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Immunology and Microbiology (all),2400,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Immunology and Microbiology (miscellaneous),2401,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Microbiology,2404,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Molecular Biology,1312,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Parasitology,2405,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Structural Biology,1315,
+ASJC (Scopus),Life Sciences and Medicine,Biological Sciences,Virology,2406,
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,Business and International Management,1403,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,"Business, Management and Accounting (all)",1400,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,"Business, Management and Accounting (miscellaneous)",1401,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,Industrial Relations,1410,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,Management Information Systems,1404,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,Management of Technology and Innovation,1405,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,Marketing,1406,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,Organizational Behavior and Human Resource Management,1407,Exclude
+ASJC (Scopus),Social Sciences and Management,Business and Management Studies,Strategy and Management,1408,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Analytical Chemistry,1602,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Chemistry (all),1600,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Chemistry (miscellaneous),1601,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Electrochemistry,1603,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Inorganic Chemistry,1604,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Organic Chemistry,1605,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Physical and Theoretical Chemistry,1606,Exclude
+ASJC (Scopus),Natural Sciences,Chemistry,Spectroscopy,1607,Exclude
+ASJC (Scopus),Arts and Humanities,Classics and Ancient History,Classics,1205,Exclude
+ASJC (Scopus),Social Sciences and Management,Communication and Media Studies,Communication,3315,Exclude
+ASJC (Scopus),Social Sciences and Management,Communication and Media Studies,Cultural Studies,3316,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Artificial Intelligence,1702,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Computational Theory and Mathematics,1703,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Computer Graphics and Computer-Aided Design,1704,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Computer Networks and Communications,1705,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Computer Science (all),1700,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Computer Science (miscellaneous),1701,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Computer Science Applications,1706,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Computer Vision and Pattern Recognition,1707,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Control and Systems Engineering,2207,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Hardware and Architecture,1708,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Human-Computer Interaction,1709,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Information Systems,1710,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Information Systems and Management,1802,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Signal Processing,1711,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Software,1712,Exclude
+ASJC (Scopus),Engineering and Technology,Computer Science,Theoretical Computer Science,2614,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Dentistry,Dental Assisting,3502,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Dentistry,Dental Hygiene,3503,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Dentistry,Dentistry (all),3500,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Dentistry,Dentistry (miscellaneous),3501,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Dentistry,Oral Surgery,3504,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Dentistry,Orthodontics,3505,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Dentistry,Periodontics,3506,Exclude
+ASJC (Scopus),Social Sciences and Management,Development Studies,Development,3303,Exclude
+ASJC (Scopus),Engineering and Technology,Earth and Marine Sciences,Ocean Engineering,2212,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Atmospheric Science,1902,Exclude
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Computers in Earth Sciences,1903,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Earth and Planetary Sciences (all),1900,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Earth and Planetary Sciences (miscellaneous),1901,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Earth-Surface Processes,1904,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Economic Geology,1905,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Geochemistry and Petrology,1906,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Geology,1907,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Geophysics,1908,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Geotechnical Engineering and Engineering Geology,1909,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Oceanography,1910,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Paleontology,1911,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Space and Planetary Science,1912,
+ASJC (Scopus),Natural Sciences,Earth and Marine Sciences,Stratigraphy,1913,
+ASJC (Scopus),Social Sciences and Management,Economics and Econometrics,Economics and Econometrics,2002,Exclude
+ASJC (Scopus),Social Sciences and Management,Economics and Econometrics,"Economics, Econometrics and Finance (all)",2000,Exclude
+ASJC (Scopus),Social Sciences and Management,Economics and Econometrics,"Economics, Econometrics and Finance (miscellaneous)",2001,Exclude
+ASJC (Scopus),Social Sciences and Management,Education,Education,3304,Exclude
+ASJC (Scopus),Engineering and Technology,Electronic Engineering,Media Technology,2214,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Bioengineering,1502,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Catalysis,1503,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Chemical Engineering (all),1500,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Chemical Engineering (miscellaneous),1501,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Chemical Health and Safety,1504,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Colloid and Surface Chemistry,1505,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Filtration and Separation,1506,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Fluid Flow and Transfer Processes,1507,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Chemical,Process Chemistry and Technology,1508,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Civil and Structural,Building and Construction,2215,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Civil and Structural,Civil and Structural Engineering,2205,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Electrical and Electronic,Electrical and Electronic Engineering,2208,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Electrical and Electronic,Energy (all),2100,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Electrical and Electronic,Energy (miscellaneous),2101,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Electrical and Electronic,Energy Engineering and Power Technology,2102,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Electrical and Electronic,Fuel Technology,2103,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Electrical and Electronic,Nuclear Energy and Engineering,2104,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - Electrical and Electronic,"Renewable Energy, Sustainability and the Environment",2105,
+ASJC (Scopus),Engineering and Technology,Engineering - General,Engineering (all),2200,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - General,Engineering (miscellaneous),2201,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering - General,"Safety, Risk, Reliability and Quality",2213,Exclude
+ASJC (Scopus),Engineering and Technology,"Engineering - Mechanical, Aeronautical and Manufacturing",Aerospace Engineering,2202,Exclude
+ASJC (Scopus),Engineering and Technology,"Engineering - Mechanical, Aeronautical and Manufacturing",Automotive Engineering,2203,Exclude
+ASJC (Scopus),Engineering and Technology,"Engineering - Mechanical, Aeronautical and Manufacturing",Computational Mechanics,2206,Exclude
+ASJC (Scopus),Engineering and Technology,"Engineering - Mechanical, Aeronautical and Manufacturing",Industrial and Manufacturing Engineering,2209,Exclude
+ASJC (Scopus),Engineering and Technology,"Engineering - Mechanical, Aeronautical and Manufacturing",Mechanical Engineering,2210,Exclude
+ASJC (Scopus),Engineering and Technology,"Engineering - Mechanical, Aeronautical and Manufacturing",Mechanics of Materials,2211,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering and Technology,Decision Sciences (all),1800,Exclude
+ASJC (Scopus),Engineering and Technology,Engineering and Technology,Decision Sciences (miscellaneous),1801,Exclude
+ASJC (Scopus),Arts and Humanities,English Language and Literature,Literature and Literary Theory,1208,Exclude
+ASJC (Scopus),Engineering and Technology,Environmental Sciences,Ecological Modeling,2302,
+ASJC (Scopus),Engineering and Technology,Environmental Sciences,Environmental Engineering,2305,
+ASJC (Scopus),Engineering and Technology,Environmental Sciences,Environmental Science (all),2300,
+ASJC (Scopus),Engineering and Technology,Environmental Sciences,Environmental Science (miscellaneous),2301,
+ASJC (Scopus),Engineering and Technology,Environmental Sciences,Global and Planetary Change,2306,
+ASJC (Scopus),Engineering and Technology,Environmental Sciences,Water Science and Technology,2312,
+ASJC (Scopus),Life Sciences and Medicine,Environmental Sciences,"Health, Toxicology and Mutagenesis",2307,Exclude
+ASJC (Scopus),Natural Sciences,Environmental Sciences,Ecology,2303,
+ASJC (Scopus),Natural Sciences,Environmental Sciences,Environmental Chemistry,2304,Exclude
+ASJC (Scopus),Social Sciences and Management,Environmental Sciences,"Management, Monitoring, Policy and Law",2308,
+ASJC (Scopus),Social Sciences and Management,Environmental Sciences,Nature and Landscape Conservation,2309,
+ASJC (Scopus),Social Sciences and Management,Environmental Sciences,Pollution,2310,
+ASJC (Scopus),Social Sciences and Management,Environmental Sciences,Waste Management and Disposal,2311,Exclude
+ASJC (Scopus),Social Sciences and Management,Geography and Area Studies,Demography,3317,
+ASJC (Scopus),Social Sciences and Management,Geography and Area Studies,"Geography, Planning and Development",3305,
+ASJC (Scopus),Natural Sciences,Geology,Atmospheric Science,1902,Exclude
+ASJC (Scopus),Natural Sciences,Geology,Earth and Planetary Sciences (all),1900,
+ASJC (Scopus),Natural Sciences,Geology,Earth and Planetary Sciences (miscellaneous),1901,
+ASJC (Scopus),Natural Sciences,Geology,Earth-Surface Processes,1904,
+ASJC (Scopus),Natural Sciences,Geology,Economic Geology,1905,
+ASJC (Scopus),Natural Sciences,Geology,Geology,1907,
+ASJC (Scopus),Natural Sciences,Geology,Geotechnical Engineering and Engineering Geology,1909,
+ASJC (Scopus),Natural Sciences,Geology,Oceanography,1910,
+ASJC (Scopus),Natural Sciences,Geology,Paleontology,1911,
+ASJC (Scopus),Natural Sciences,Geology,Space and Planetary Science,1912,
+ASJC (Scopus),Natural Sciences,Geology,Stratigraphy,1913,Exclude
+ASJC (Scopus),Natural Sciences,Geophysics,Atmospheric Science,1902,Exclude
+ASJC (Scopus),Natural Sciences,Geophysics,Computers in Earth Sciences,1903,Exclude
+ASJC (Scopus),Natural Sciences,Geophysics,Earth and Planetary Sciences (all),1900,
+ASJC (Scopus),Natural Sciences,Geophysics,Earth and Planetary Sciences (miscellaneous),1901,
+ASJC (Scopus),Natural Sciences,Geophysics,Earth-Surface Processes,1904,
+ASJC (Scopus),Natural Sciences,Geophysics,Geophysics,1908,
+ASJC (Scopus),Natural Sciences,Geophysics,Geotechnical Engineering and Engineering Geology,1909,
+ASJC (Scopus),Natural Sciences,Geophysics,Ocean Engineering,2212,
+ASJC (Scopus),Natural Sciences,Geophysics,Space and Planetary Science,1912,
+ASJC (Scopus),Arts and Humanities,History,Conservation,1206,
+ASJC (Scopus),Arts and Humanities,History,History,1202,Exclude
+ASJC (Scopus),Arts and Humanities,History,History and Philosophy of Science,1207,Exclude
+ASJC (Scopus),Social Sciences and Management,Hospitality and Leisure Management,"Tourism, Leisure and Hospitality Management",1409,Exclude
+ASJC (Scopus),Social Sciences and Management,Law,Law,3308,Exclude
+ASJC (Scopus),Social Sciences and Management,Library and Information Management,Library and Information Sciences,3309,Exclude
+ASJC (Scopus),Arts and Humanities,Linguistics,Language and Linguistics,1203,Exclude
+ASJC (Scopus),Arts and Humanities,Linguistics,Linguistics and Language,3310,Exclude
+ASJC (Scopus),Engineering and Technology,Materials Science,Materials Science (all),2500,Exclude
+ASJC (Scopus),Engineering and Technology,Materials Science,Materials Science (miscellaneous),2501,Exclude
+ASJC (Scopus),Engineering and Technology,Materials Science,Mechanics of Materials,2211,Exclude
+ASJC (Scopus),Natural Sciences,Materials Science,Biomaterials,2502,Exclude
+ASJC (Scopus),Natural Sciences,Materials Science,Ceramics and Composites,2503,Exclude
+ASJC (Scopus),Natural Sciences,Materials Science,"Electronic, Optical and Magnetic Materials",2504,Exclude
+ASJC (Scopus),Natural Sciences,Materials Science,Materials Chemistry,2505,Exclude
+ASJC (Scopus),Natural Sciences,Materials Science,Metals and Alloys,2506,Exclude
+ASJC (Scopus),Natural Sciences,Materials Science,Polymers and Plastics,2507,Exclude
+ASJC (Scopus),Natural Sciences,Materials Science,"Surfaces, Coatings and Films",2508,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Algebra and Number Theory,2602,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Analysis,2603,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Applied Mathematics,2604,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Computational Mathematics,2605,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Control and Optimization,2606,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Discrete Mathematics and Combinatorics,2607,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Geometry and Topology,2608,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Logic,2609,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Mathematics (all),2600,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Mathematics (miscellaneous),2601,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Modeling and Simulation,2611,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Numerical Analysis,2612,Exclude
+ASJC (Scopus),Natural Sciences,Mathematics,Statistics and Probability,2613,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Anatomy,2702,
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Anesthesiology and Pain Medicine,2703,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Behavioral Neuroscience,2802,
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Biochemistry (medical),2704,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Biological Psychiatry,2803,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Cardiology and Cardiovascular Medicine,2705,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Cellular and Molecular Neuroscience,2804,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Cognitive Neuroscience,2805,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Complementary and Alternative Medicine,2707,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Critical Care and Intensive Care Medicine,2706,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Dermatology,2708,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Developmental Neuroscience,2806,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Drug Guides,2709,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Embryology,2710,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Emergency Medicine,2711,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Endocrine and Autonomic Systems,2807,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,"Endocrinology, Diabetes and Metabolism",2712,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Epidemiology,2713,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Family Practice,2714,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Gastroenterology,2715,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Genetics (clinical),2716,
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Geriatrics and Gerontology,2717,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Health Informatics,2718,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Health Policy,2719,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Hematology,2720,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Hepatology,2721,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Histology,2722,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Immunology and Allergy,2723,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Infectious Diseases,2725,
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Internal Medicine,2724,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Medicine (all),2700,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Medicine (miscellaneous),2701,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Microbiology (medical),2726,
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Molecular Medicine,1313,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Nephrology,2727,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Neurology,2808,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Neurology (clinical),2728,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Neuroscience (all),2800,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Neuroscience (miscellaneous),2801,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Obstetrics and Gynecology,2729,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Oncology,2730,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Ophthalmology,2731,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Orthopedics and Sports Medicine,2732,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Otorhinolaryngology,2733,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Pathology and Forensic Medicine,2734,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,"Pediatrics, Perinatology and Child Health",2735,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Psychiatry and Mental Health,2738,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,"Public Health, Environmental and Occupational Health",2739,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Pulmonary and Respiratory Medicine,2740,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,"Radiology, Nuclear Medicine and Imaging",2741,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Rehabilitation,2742,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Reproductive Medicine,2743,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Reviews and References (medical),2744,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Rheumatology,2745,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Sensory Systems,2809,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Surgery,2746,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Transplantation,2747,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Medicine,Urology,2748,Exclude
+ASJC (Scopus),Natural Sciences,Mining Engineering,Geochemistry and Petrology,1906,
+ASJC (Scopus),Natural Sciences,Mining Engineering,Geology,1907,
+ASJC (Scopus),Natural Sciences,Mining Engineering,Geophysics,1908,
+ASJC (Scopus),Natural Sciences,Mining Engineering,Geotechnical Engineering and Engineering Geology,1909,
+ASJC (Scopus),Natural Sciences,Mining Engineering,Ocean Engineering,2212,
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Advanced and Specialized Nursing,2902,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Assessment and Diagnosis,2903,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Care Planning,2904,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Community and Home Care,2905,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Critical Care Nursing,2906,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Emergency Nursing,2907,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Fundamentals and Skills,2908,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Gerontology,2909,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,"Issues, Ethics and Legal Aspects",2910,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Leadership and Management,2911,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,LPN and LVN,2912,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Maternity and Midwifery,2913,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Medical and Surgical Nursing,2914,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Nurse Assisting,2915,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Nursing (all),2900,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Nursing (miscellaneous),2901,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Nutrition and Dietetics,2916,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Oncology (nursing),2917,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Pathophysiology,2918,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Pediatrics,2919,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Pharmacology (nursing),2920,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Psychiatric Mental Health,2921,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Research and Theory,2922,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Nursing,Review and Exam Preparation,2923,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Chiropractics,3602,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Complementary and Manual Therapy,3603,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Emergency Medical Services,3604,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Health Information Management,3605,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Health Professions (all),3600,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Health Professions (miscellaneous),3601,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Medical Assisting and Transcription,3606,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Medical Laboratory Technology,3607,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Medical Terminology,3608,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Occupational Therapy,3609,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Optometry,3610,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Podiatry,3613,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Radiological and Ultrasound Technology,3614,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Respiratory Care,3615,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Other Studies and Professions Allied to Medicine,Speech and Hearing,3616,Exclude
+ASJC (Scopus),Arts and Humanities,Performing Arts,"History of Art, Architecture and Design",1213,Exclude
+ASJC (Scopus),Arts and Humanities,Performing Arts,Museology,1209,Exclude
+ASJC (Scopus),Arts and Humanities,Performing Arts,Music,1210,Exclude
+ASJC (Scopus),Arts and Humanities,Performing Arts,Visual Arts and Performing Arts,1213,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Catalysis,1503,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Chemical Health and Safety,1504,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Earth and Planetary Sciences (all),1900,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Earth and Planetary Sciences (miscellaneous),1901,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Economic Geology,1905,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Electrical and Electronic Engineering,2208,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Energy (all),2100,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Energy (miscellaneous),2101,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Energy Engineering and Power Technology,2102,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Environmental Chemistry,2304,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Filtration and Separation,1506,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Fluid Flow and Transfer Processes,1507,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Fuel Technology,2103,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Geochemistry and Petrology,1906,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Geotechnical Engineering and Engineering Geology,1909,
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Ocean Engineering,2212,
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Organic Chemistry,1605,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Physical and Theoretical Chemistry,1606,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,Process Chemistry and Technology,1508,Exclude
+ASJC (Scopus),Engineering and Technology,Petroleum Engineering,"Safety, Risk, Reliability and Quality",2213,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,Drug Discovery,3002,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,Pharmaceutical Science,3003,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,Pharmacology,3004,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,Pharmacology (medical),2736,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,"Pharmacology, Toxicology and Pharmaceutics (all)",3000,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,"Pharmacology, Toxicology and Pharmaceutics (miscellaneous)",3001,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,Pharmacy,3611,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Pharmacy and Pharmacology,Toxicology,3005,Exclude
+ASJC (Scopus),Arts and Humanities,Philosophy,Philosophy,1211,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Acoustics and Ultrasonics,3102,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Astronomy and Astrophysics,3103,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,"Atomic and Molecular Physics, and Optics",3107,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Condensed Matter Physics,3104,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Instrumentation,3105,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Mathematical Physics,2610,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Nuclear and High Energy Physics,3106,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Physics and Astronomy (all),3100,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Physics and Astronomy (miscellaneous),3101,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Radiation,3108,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Statistical and Nonlinear Physics,3109,Exclude
+ASJC (Scopus),Natural Sciences,Physics and Astronomy,Surfaces and Interfaces,3110,Exclude
+ASJC (Scopus),Social Sciences and Management,Politics and International Studies,Political Science and International Relations,3320,Exclude
+ASJC (Scopus),Social Sciences and Management,Politics and International Studies,Public Administration,3321,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Psychology,Applied Psychology,3202,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Psychology,Clinical Psychology,3203,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Psychology,Experimental and Cognitive Psychology,3205,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Psychology,Neuropsychology and Physiological Psychology,3206,Exclude
+ASJC (Scopus),Social Sciences and Management,Psychology,Developmental and Educational Psychology,3204,Exclude
+ASJC (Scopus),Social Sciences and Management,Psychology,Psychology (all),3200,Exclude
+ASJC (Scopus),Social Sciences and Management,Psychology,Psychology (miscellaneous),3201,Exclude
+ASJC (Scopus),Social Sciences and Management,Psychology,Social Psychology,3207,Exclude
+ASJC (Scopus),Social Sciences and Management,Social Policy and Administration,Public Administration,3321,Exclude
+ASJC (Scopus),Social Sciences and Management,Social Sciences and Management,Health (social science),3306,Exclude
+ASJC (Scopus),Social Sciences and Management,Social Sciences and Management,Human Factors and Ergonomics,3307,Exclude
+ASJC (Scopus),Social Sciences and Management,Social Sciences and Management,Safety Research,3311,Exclude
+ASJC (Scopus),Social Sciences and Management,Social Sciences and Management,Social Sciences (all),3300,Exclude
+ASJC (Scopus),Social Sciences and Management,Social Sciences and Management,Social Sciences (miscellaneous),3301,Exclude
+ASJC (Scopus),Social Sciences and Management,Sociology,Demography,3317,
+ASJC (Scopus),Social Sciences and Management,Sociology,Gender Studies,3318,Exclude
+ASJC (Scopus),Social Sciences and Management,Sociology,Life-span and Life-course Studies,3319,Exclude
+ASJC (Scopus),Social Sciences and Management,Sociology,Sociology and Political Science,3312,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Sports-related Subjects,"Physical Therapy, Sports Therapy and Rehabilitation",3612,Exclude
+ASJC (Scopus),Engineering and Technology,Statistics and Operational Research,Statistics and Probability,2613,Exclude
+ASJC (Scopus),Engineering and Technology,Statistics and Operational Research,"Statistics, Probability and Uncertainty",1804,Exclude
+ASJC (Scopus),Natural Sciences,Statistics and Operational Research,Statistics and Probability,2613,Exclude
+ASJC (Scopus),Natural Sciences,Statistics and Operational Research,"Statistics, Probability and Uncertainty",1804,Exclude
+ASJC (Scopus),Social Sciences and Management,Statistics and Operational Research,Management Science and Operations Research,1803,Exclude
+ASJC (Scopus),Arts and Humanities,"Theology, Divinity and Religious Studies",Religious Studies,1212,Exclude
+ASJC (Scopus),Life Sciences and Medicine,Veterinary Science,Equine,3402,
+ASJC (Scopus),Life Sciences and Medicine,Veterinary Science,Food Animals,3403,
+ASJC (Scopus),Life Sciences and Medicine,Veterinary Science,Small Animals,3404,
+ASJC (Scopus),Life Sciences and Medicine,Veterinary Science,Veterinary (all),3400,
+ASJC (Scopus),Life Sciences and Medicine,Veterinary Science,Veterinary (miscellaneous),3401,
+WoS,,,Acoustics,,Exclude
+WoS,,,Agricultural Economics & Policy,,
+WoS,,,Agricultural Engineering,,
+WoS,,,"Agriculture, Dairy & Animal Science",,
+WoS,,,"Agriculture, Multidisciplinary",,
+WoS,,,Agronomy,,
+WoS,,,Allergy,,Exclude
+WoS,,,Anatomy & Morphology,,
+WoS,,,Andrology,,Exclude
+WoS,,,Anesthesiology,,Exclude
+WoS,,,Anthropology,,Exclude
+WoS,,,Archaeology,,Exclude
+WoS,,,Architecture,,Exclude
+WoS,,,Area Studies,,Exclude
+WoS,,,Art,,Exclude
+WoS,,,Asian Studies,,Exclude
+WoS,,,Astronomy & Astrophysics,,Exclude
+WoS,,,Audiology & Speech-Language Pathology,,Exclude
+WoS,,,Automation & Control Systems,,Exclude
+WoS,,,Behavioral Sciences,,
+WoS,,,Biochemical Research Methods,,Exclude
+WoS,,,Biochemistry & Molecular Biology,,Exclude
+WoS,,,Biodiversity Conservation,,
+WoS,,,Biology,,
+WoS,,,Biophysics,,
+WoS,,,Biotechnology & Applied Microbiology,,
+WoS,,,Business,,Exclude
+WoS,,,"Business, Finance",,Exclude
+WoS,,,Cardiac & Cardiovascular Systems,,Exclude
+WoS,,,Cell & Tissue Engineering,,Exclude
+WoS,,,Cell Biology,,Exclude
+WoS,,,"Chemistry, Analytical",,Exclude
+WoS,,,"Chemistry, Applied",,Exclude
+WoS,,,"Chemistry, Inorganic & Nuclear",,Exclude
+WoS,,,"Chemistry, Medicinal",,Exclude
+WoS,,,"Chemistry, Multidisciplinary",,Exclude
+WoS,,,"Chemistry, Organic",,Exclude
+WoS,,,"Chemistry, Physical",,Exclude
+WoS,,,Classics,,Exclude
+WoS,,,Clinical Neurology,,Exclude
+WoS,,,Communication,,Exclude
+WoS,,,"Computer Science, Artificial Intelligence",,Exclude
+WoS,,,"Computer Science, Cybernetics",,Exclude
+WoS,,,"Computer Science, Hardware & Architecture",,Exclude
+WoS,,,"Computer Science, Information Systems",,Exclude
+WoS,,,"Computer Science, Interdisciplinary Applications",,Exclude
+WoS,,,"Computer Science, Software Engineering",,Exclude
+WoS,,,"Computer Science, Theory & Methods",,Exclude
+WoS,,,Construction & Building Technology,,Exclude
+WoS,,,Criminology & Penology,,Exclude
+WoS,,,Critical Care Medicine,,Exclude
+WoS,,,Crystallography,,Exclude
+WoS,,,Cultural Studies,,Exclude
+WoS,,,Dance,,Exclude
+WoS,,,Demography,,
+WoS,,,"Dentistry, Oral Surgery & Medicine",,Exclude
+WoS,,,Dermatology,,Exclude
+WoS,,,Development Studies,,Exclude
+WoS,,,Developmental Biology,,
+WoS,,,Ecology,,
+WoS,,,Economics,,Exclude
+WoS,,,Education & Educational Research,,Exclude
+WoS,,,"Education, Scientific Disciplines",,Exclude
+WoS,,,"Education, Special",,Exclude
+WoS,,,Electrochemistry,,Exclude
+WoS,,,Emergency Medicine,,Exclude
+WoS,,,Endocrinology & Metabolism,,Exclude
+WoS,,,Energy & Fuels,,Exclude
+WoS,,,"Engineering, Aerospace",,Exclude
+WoS,,,"Engineering, Biomedical",,Exclude
+WoS,,,"Engineering, Chemical",,Exclude
+WoS,,,"Engineering, Civil",,Exclude
+WoS,,,"Engineering, Electrical & Electronic",,Exclude
+WoS,,,"Engineering, Environmental",,
+WoS,,,"Engineering, Geological",,Exclude
+WoS,,,"Engineering, Industrial",,Exclude
+WoS,,,"Engineering, Manufacturing",,Exclude
+WoS,,,"Engineering, Marine",,
+WoS,,,"Engineering, Mechanical",,Exclude
+WoS,,,"Engineering, Multidisciplinary",,Exclude
+WoS,,,"Engineering, Ocean",,
+WoS,,,"Engineering, Petroleum",,Exclude
+WoS,,,Entomology,,
+WoS,,,Environmental Sciences,,
+WoS,,,Environmental Studies,,
+WoS,,,Ergonomics,,Exclude
+WoS,,,Ethics,,Exclude
+WoS,,,Ethnic Studies,,Exclude
+WoS,,,Evolutionary Biology,,
+WoS,,,Family Studies,,Exclude
+WoS,,,"Film, Radio, Television",,Exclude
+WoS,,,Fisheries,,
+WoS,,,Folklore,,Exclude
+WoS,,,Food Science & Technology,,Exclude
+WoS,,,Forestry,,Exclude
+WoS,,,Gastroenterology & Hepatology,,Exclude
+WoS,,,Genetics & Heredity,,
+WoS,,,Geochemistry & Geophysics,,Exclude
+WoS,,,Geography,,
+WoS,,,"Geography, Physical",,
+WoS,,,Geology,,
+WoS,,,"Geosciences, Multidisciplinary",,
+WoS,,,Geriatrics & Gerontology,,Exclude
+WoS,,,Gerontology,,Exclude
+WoS,,,Green & Sustainable Science & Technology,,
+WoS,,,Health Care Sciences & Services,,Exclude
+WoS,,,Health Policy & Services,,Exclude
+WoS,,,Hematology,,Exclude
+WoS,,,History,,Exclude
+WoS,,,History & Philosophy of Science,,Exclude
+WoS,,,History of Social Sciences,,Exclude
+WoS,,,Horticulture,,
+WoS,,,"Hospitality, Leisure, Sport & Tourism",,Exclude
+WoS,,,"Humanities, Multidisciplinary",,Exclude
+WoS,,,Imaging Science & Photographic Technology,,Exclude
+WoS,,,Immunology,,Exclude
+WoS,,,Industrial Relations & Labor,,Exclude
+WoS,,,Infectious Diseases,,
+WoS,,,Information Science & Library Science,,Exclude
+WoS,,,Instruments & Instrumentation,,Exclude
+WoS,,,Integrative & Complementary Medicine,,Exclude
+WoS,,,International Relations,,Exclude
+WoS,,,Language & Linguistics,,Exclude
+WoS,,,Law,,Exclude
+WoS,,,Limnology,,
+WoS,,,Linguistics,,Exclude
+WoS,,,Literary Reviews,,Exclude
+WoS,,,Literary Theory & Criticism,,Exclude
+WoS,,,Literature,,Exclude
+WoS,,,"Literature, African, Australian, Canadian",,Exclude
+WoS,,,"Literature, American",,Exclude
+WoS,,,"Literature, British Isles",,Exclude
+WoS,,,"Literature, German, Dutch, Scandinavian",,Exclude
+WoS,,,"Literature, Romance",,Exclude
+WoS,,,"Literature, Slavic",,Exclude
+WoS,,,Logic,,Exclude
+WoS,,,Management,,Exclude
+WoS,,,Marine & Freshwater Biology,,
+WoS,,,"Materials Science, Biomaterials",,Exclude
+WoS,,,"Materials Science, Ceramics",,Exclude
+WoS,,,"Materials Science, Characterization & Testing",,Exclude
+WoS,,,"Materials Science, Coatings & Films",,Exclude
+WoS,,,"Materials Science, Composites",,Exclude
+WoS,,,"Materials Science, Multidisciplinary",,Exclude
+WoS,,,"Materials Science, Paper & Wood",,Exclude
+WoS,,,"Materials Science, Textiles",,Exclude
+WoS,,,Mathematical & Computational Biology,,Exclude
+WoS,,,Mathematics,,Exclude
+WoS,,,"Mathematics, Applied",,Exclude
+WoS,,,"Mathematics, Interdisciplinary Applications",,Exclude
+WoS,,,Mechanics,,Exclude
+WoS,,,Medical Ethics,,Exclude
+WoS,,,Medical Informatics,,Exclude
+WoS,,,Medical Laboratory Technology,,Exclude
+WoS,,,"Medicine, General & Internal",,Exclude
+WoS,,,"Medicine, Legal",,Exclude
+WoS,,,"Medicine, Research & Experimental",,Exclude
+WoS,,,Medieval & Renaissance Studies,,Exclude
+WoS,,,Metallurgy & Metallurgical Engineering,,Exclude
+WoS,,,Meteorology & Atmospheric Sciences,,Exclude
+WoS,,,Microbiology,,
+WoS,,,Microscopy,,
+WoS,,,Mineralogy,,Exclude
+WoS,,,Mining & Mineral Processing,,Exclude
+WoS,,,Multidisciplinary Sciences,,
+WoS,,,Music,,Exclude
+WoS,,,Mycology,,
+WoS,,,Nanoscience & Nanotechnology,,Exclude
+WoS,,,Neuroimaging,,Exclude
+WoS,,,Neurosciences,,Exclude
+WoS,,,Nuclear Science & Technology,,Exclude
+WoS,,,Nursing,,Exclude
+WoS,,,Nutrition & Dietetics,,Exclude
+WoS,,,Obstetrics & Gynecology,,Exclude
+WoS,,,Oceanography,,
+WoS,,,Oncology,,Exclude
+WoS,,,Operations Research & Management Science,,Exclude
+WoS,,,Ophthalmology,,Exclude
+WoS,,,Optics,,Exclude
+WoS,,,Ornithology,,
+WoS,,,Orthopedics,,Exclude
+WoS,,,Otorhinolaryngology,,Exclude
+WoS,,,Paleontology,,
+WoS,,,Parasitology,,
+WoS,,,Pathology,,Exclude
+WoS,,,Pediatrics,,Exclude
+WoS,,,Peripheral Vascular Disease,,Exclude
+WoS,,,Pharmacology & Pharmacy,,Exclude
+WoS,,,Philosophy,,Exclude
+WoS,,,"Physics, Applied",,Exclude
+WoS,,,"Physics, Atomic, Molecular & Chemical",,Exclude
+WoS,,,"Physics, Condensed Matter",,Exclude
+WoS,,,"Physics, Fluids & Plasmas",,Exclude
+WoS,,,"Physics, Mathematical",,Exclude
+WoS,,,"Physics, Multidisciplinary",,Exclude
+WoS,,,"Physics, Nuclear",,Exclude
+WoS,,,"Physics, Particles & Fields",,Exclude
+WoS,,,Physiology,,
+WoS,,,Plant Sciences,,
+WoS,,,Poetry,,Exclude
+WoS,,,Political Science,,Exclude
+WoS,,,Polymer Science,,Exclude
+WoS,,,Primary Health Care,,Exclude
+WoS,,,Psychiatry,,Exclude
+WoS,,,Psychology,,Exclude
+WoS,,,"Psychology, Applied",,Exclude
+WoS,,,"Psychology, Biological",,Exclude
+WoS,,,"Psychology, Clinical",,Exclude
+WoS,,,"Psychology, Developmental",,Exclude
+WoS,,,"Psychology, Educational",,Exclude
+WoS,,,"Psychology, Experimental",,Exclude
+WoS,,,"Psychology, Mathematical",,Exclude
+WoS,,,"Psychology, Multidisciplinary",,Exclude
+WoS,,,"Psychology, Psychoanalysis",,Exclude
+WoS,,,"Psychology, Social",,Exclude
+WoS,,,Public Administration,,Exclude
+WoS,,,"Public, Environmental & Occupational Health",,Exclude
+WoS,,,Quantum Science & Technology,,Exclude
+WoS,,,"Radiology, Nuclear Medicine & Medical Imaging",,Exclude
+WoS,,,Regional & Urban Planning,,Exclude
+WoS,,,Rehabilitation,,Exclude
+WoS,,,Religion,,Exclude
+WoS,,,Remote Sensing,,
+WoS,,,Reproductive Biology,,
+WoS,,,Respiratory System,,Exclude
+WoS,,,Rheumatology,,Exclude
+WoS,,,Robotics,,Exclude
+WoS,,,Social Issues,,Exclude
+WoS,,,"Social Sciences, Biomedical",,Exclude
+WoS,,,"Social Sciences, Interdisciplinary",,Exclude
+WoS,,,"Social Sciences, Mathematical Methods",,Exclude
+WoS,,,Social Work,,Exclude
+WoS,,,Sociology,,Exclude
+WoS,,,Soil Science,,
+WoS,,,Spectroscopy,,Exclude
+WoS,,,Sport Sciences,,Exclude
+WoS,,,Statistics & Probability,,Exclude
+WoS,,,Substance Abuse,,Exclude
+WoS,,,Surgery,,Exclude
+WoS,,,Telecommunications,,Exclude
+WoS,,,Theater,,Exclude
+WoS,,,Thermodynamics,,Exclude
+WoS,,,Toxicology,,Exclude
+WoS,,,Transplantation,,Exclude
+WoS,,,Transportation,,Exclude
+WoS,,,Transportation Science & Technology,,Exclude
+WoS,,,Tropical Medicine,,Exclude
+WoS,,,Urban Studies,,Exclude
+WoS,,,Urology & Nephrology,,Exclude
+WoS,,,Veterinary Sciences,,Exclude
+WoS,,,Virology,,
+WoS,,,Water Resources,,
+WoS,,,Women's Studies,,Exclude
+WoS,,,Zoology,,

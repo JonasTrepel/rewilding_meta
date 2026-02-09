@@ -1,0 +1,7 @@
+"","filename","variable","group_id","mean","sd","n","r","se","error_type","plot_type"
+"1","Chollet_et_al_2013_ecoscience_cover.png","species_density","no_deer",2.38327526132404,1.04594637152857,22,NA,0.222996515679442,"se","mean_error"
+"2","Chollet_et_al_2013_ecoscience_cover.png","species_density","deer",6.52264808362369,1.37280461263124,22,NA,0.292682926829267,"se","mean_error"
+"3","Chollet_et_al_2013_ecoscience_sd.png","cover","no_deer",7.98611111111112,8.14308291636014,22,NA,1.73611111111111,"se","mean_error"
+"4","Chollet_et_al_2013_ecoscience_sd.png","cover","deer",87.8472222222222,6.51446633308802,22,NA,1.38888888888887,"se","mean_error"
+"5","Chollet_et_al_2013_ecoscience_sdiv.png","shannon_diversity","no_deer",0.64,0.28713501694919,22,NA,0.0612173913043477,"se","mean_error"
+"6","Chollet_et_al_2013_ecoscience_sdiv.png","shannon_diversity","deer",1.41913043478261,0.326289791987716,22,NA,0.0695652173913042,"se","mean_error"
