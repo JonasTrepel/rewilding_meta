@@ -5,8 +5,22 @@ library(tidyverse)
 library(metafor)
 
 
+update_data <- T
+
+if(update_data){
+  #get most recent version from google docs
+  dt_raw <- read_sheet("https://docs.google.com/spreadsheets/d/1qmrCjXNrm7251FCP0Bt82aMtsV3KXLQ-YEZGzlI8-Qg/edit?usp=sharing", 
+                   col_types = "c") %>% 
+    filter(!is.na(citation), citation != "")
+  
+  fwrite(dt_raw, "data/raw_data/rewilding_meta_raw_dataset - dataset.csv")
+  
+}
+  
 dt_raw <- fread("data/raw_data/rewilding_meta_raw_dataset - dataset.csv") %>% 
-  filter(!is.na(citation), citation != "")
+    filter(!is.na(citation), citation != "")
+
+
 
 
 # 1. Calculate Effect Sizes ----------------------------

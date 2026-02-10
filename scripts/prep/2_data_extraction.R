@@ -625,6 +625,74 @@ dt_soil %>%
             n = n()) 
 
 
+# del Valle et al 2024 The Journal of Wildlife Management -----------------------
+
+#Birbs
+dt_dv <- fread("data/extraction/del Valle et al 2024 The Journal of Wildlife Management/bird.point.count.distance.data.csv") %>% 
+  filter(Preserve == "Nachusa") %>%
+  mutate(treatment = ifelse(Bison == 1, "grazed", "ungrazed"))
+
+dt_dv %>% 
+  group_by(Year, treatment, Plot) %>% 
+  summarize(bird_richness = n_distinct(Species.Code), 
+            bird_abundance = n()) %>% 
+  group_by(Year, treatment) %>% 
+  summarize(mean_richness = mean(bird_richness , na.rm = T), 
+            sd_richness = sd(bird_richness , na.rm = T), 
+            mean_abundance = mean(bird_abundance , na.rm = T), 
+            sd_abundance = sd(bird_abundance , na.rm = T), 
+            n = n()) 
+
+#veg 
+dt_dv_veg <- fread("data/extraction/del Valle et al 2024 The Journal of Wildlife Management/veg.data.csv") %>% 
+  filter(Preserve == "Nachusa") %>%
+  mutate(treatment = ifelse(Bison == "Bison", "grazed", "ungrazed"))
+names(dt_dv_veg)
+#veg height
+dt_dv_veg %>% 
+  group_by(Year, treatment) %>% 
+  summarize(mean = mean(Vertical , na.rm = T), 
+            sd = sd(Vertical , na.rm = T), 
+            n = n()) 
+
+#Litter depth
+dt_dv_veg %>% 
+  group_by(Year, treatment) %>% 
+  summarize(mean = mean(Thatch.Depth , na.rm = T), 
+            sd = sd(Thatch.Depth , na.rm = T), 
+            n = n()) 
+
+#Bare ground cover 
+dt_dv_veg %>% 
+  group_by(Year, treatment) %>% 
+  summarize(mean = mean(X.Bare*100 , na.rm = T), 
+            sd = sd(X.Bare*100 , na.rm = T), 
+            n = n()) 
+
+
+#Forb cover 
+dt_dv_veg %>% 
+  group_by(Year, treatment) %>% 
+  summarize(mean = mean(X.Forb*100 , na.rm = T), 
+            sd = sd(X.Forb*100 , na.rm = T), 
+            n = n()) 
+
+#Grass cover 
+dt_dv_veg %>% 
+  group_by(Year, treatment) %>% 
+  summarize(mean = mean(X.Grass*100 , na.rm = T), 
+            sd = sd(X.Grass*100 , na.rm = T), 
+            n = n()) 
+
+#Woody cover 
+dt_dv_veg %>% 
+  group_by(Year, treatment) %>% 
+  summarize(mean = mean(X.Wood*100 , na.rm = T), 
+            sd = sd(X.Wood*100 , na.rm = T), 
+            n = n()) 
+
+
+
 ###########################################################################################################
 ##################################### Extract using metaDigitise ##########################################
 ###########################################################################################################
