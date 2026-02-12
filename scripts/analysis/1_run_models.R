@@ -1,0 +1,215 @@
+
+rm(list=ls())
+
+library(data.table)
+library(tidyverse)
+library(metafor)
+
+# load data ---------
+
+dt <- fread("data/processed_data/clean_rewilding_meta_dataset.csv")
+
+# 0 get overview -------
+
+n <- dt[, .(n_studies = uniqueN(citation), n_data_points = uniqueN(data_point_id)), by = eco_response]
+n
+
+n_distinct(dt[is.na(eco_response), citation])
+n_distinct(dt[!is.na(eco_response), citation])
+
+# 1. Intercept only models ---------
+
+
+## 1.1 create model guide ----------------
+
+distinct_responses = unique(dt %>% 
+                              group_by(eco_response) %>% 
+                              mutate(n_citations = n_distinct(citation)) %>%
+                              filter(n_citations >= 3) %>% 
+                              pull(eco_response))
+
+model_guide <- CJ(eco_response = c(distinct_responses))
+table(model_guide)
+
+
+# Now create 'selection' formula for dataset 
+model_guide[, select := paste0("eco_response == ", "'" , eco_response, "'")]
+model_guide
+
+# add a unique ID
+model_guide[, model_id := paste(eco_response, "intercept_only",sep = "_")]
+model_guide[, model_id := gsub(":", "_", model_id)]
+model_guide
+
+set.seed(161)
+
+#1.2. model for loop ------------
+
+dt_res <- data.frame()
+
+for(i in 1:nrow(model_guide)){
+  
+#  result <- tryCatch({ 
+    #build data
+    dt_sub = dt[eval(parse(text = model_guide[i, ]$select)),] %>% 
+      group_by(citation) %>% 
+      slice_max(time_series_clean)
+
+    
+    m_smd <- rma.mv(yi_smdh ~ 1, # intercept only model
+                 V = vi_smdh, 
+                 random = list(~ 1 | site_name / citation), 
+                 data = dt_sub, 
+                 method = "REML",  test = "t", dfs = "contain")
+    
+    m_rom <- rma.mv(yi_rom ~ 1, # intercept only model
+                    V = vi_rom, 
+                    random = list(~ 1 | site_name / citation), 
+                    data = dt_sub, 
+                    method = "REML",  test = "t", dfs = "contain")
+    
+    ## get I^2
+    #https://www.metafor-project.org/doku.php/tips:i2_multilevel_multivariate
+    
+    #SMD
+    
+    W <- diag(1/m_smd$vi)
+    X <- model.matrix(m_smd)
+    P <- W - W %*% X %*% solve(t(X) %*% W %*% X) %*% t(X) %*% W
+    (i2_smd = 100 * sum(m_smd$sigma2) / (sum(m_smd$sigma2) + (m_smd$k-m_smd$p)/sum(diag(P))))
+    
+    #LnROM
+    
+    
+    W <- diag(1/m_rom$vi)
+    X <- model.matrix(m_rom)
+    P <- W - W %*% X %*% solve(t(X) %*% W %*% X) %*% t(X) %*% W
+    (i2_rom = 100 * sum(m_rom$sigma2) / (sum(m_rom$sigma2) + (m_rom$k-m_rom$p)/sum(diag(P))))
+    
+    dt_smd <- data.frame(
+      eco_response = model_guide[i, ]$eco_response, 
+      estimate = m_smd$b[1], 
+      ci_lb = m_smd$ci.lb[1],
+      ci_ub = m_smd$ci.ub[1],
+      p_val = m_smd$pval[1],
+      n = nrow(dt_sub),
+      n_citations = n_distinct(dt_sub$citation),
+      effect_size = "SMD", 
+      i2 = i2_smd
+    )
+    
+    dt_rom <- data.frame(
+      eco_response = model_guide[i, ]$eco_response, 
+      estimate = m_rom$b[1], 
+      ci_lb = m_rom$ci.lb[1],
+      ci_ub = m_rom$ci.ub[1],
+      p_val = m_rom$pval[1],
+      n = nrow(dt_sub),
+      n_citations = n_distinct(dt_sub$citation),
+      effect_size = "lnROM",
+      i2 = i2_rom
+    )
+    
+    dt_tmp = dt_smd %>% rbind(dt_rom)
+
+  # }, error = function(e) {
+  #   return(NULL)
+  # })
+  # if (is.null(result)) {
+  #   next
+  # }
+
+  dt_res <- rbind(dt_tmp, dt_res)  
+    
+  cat(i,"/",nrow(model_guide),"\r")
+}
+
+
+
+dt_res_plot = dt_res %>%
+  mutate(
+    clean_response = case_when(
+      .default = eco_response,
+      eco_response == "soil_ph" ~ "Soil pH",
+      eco_response == "soil_p" ~ "Soil P",
+      eco_response == "soil_density" ~ "Soil bulk density",
+      eco_response == "soil_cn" ~ "Soil C:N ratio",
+      
+      eco_response == "plant_richness" ~ "Plant richness",
+      eco_response == "plant_height" ~ "Plant height",
+      eco_response == "plant_evenness" ~ "Plant evenness",
+      eco_response == "plant_diversity" ~ "Plant diversity",
+      eco_response == "plant_cover" ~ "Plant cover",
+      eco_response == "plant_biomass" ~ "Plant biomass",
+      eco_response == "plant_abundance" ~ "Plant abundance",
+      
+      eco_response == "invertebrate_richness" ~ "Invertebrate richness",
+      eco_response == "invertebrate_diversity" ~ "Invertebrate diversity",
+      eco_response == "invertebrate_abundance" ~ "Invertebrate abundance",
+      
+      eco_response == "bird_abundance" ~ "Bird abundance",
+      eco_response == "bare_ground" ~ "Bare ground"), 
+    significance = ifelse(ci_lb > 0 | ci_ub < 0, "Significant", "Not significant"), 
+    clean_response = reorder(clean_response, estimate), 
+    label_n = paste0(clean_response, " (n = ", n_citations, " [", n, "])"),
+    label_n = reorder(label_n, estimate)) 
+
+
+dt_plot_points = dt %>%
+  pivot_longer(cols = c(yi_rom, yi_smdh), 
+               names_to = "effect_size", values_to = "yi") %>% 
+  mutate(effect_size = ifelse(effect_size == "yi_smdh", "SMD", "lnROM"),
+         vi = ifelse(effect_size == "SMD", vi_smdh, vi_rom), 
+         vi_inv = 1/vi) %>% 
+  left_join(dt_res_plot[, c("eco_response", "clean_response", "label_n")] %>% 
+              unique()) %>% 
+  filter(!is.na(label_n))
+  
+
+
+p_res <- dt_res_plot %>% 
+  filter(effect_size == "SMD") %>% 
+  ggplot() +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  geom_jitter(data = dt_plot_points %>% 
+                filter(effect_size == "SMD"), aes(x = yi, y = label_n, size = vi_inv),
+              alpha = 0.2, color = "grey25",
+              height = 0.1, width = 0.01) +
+  geom_pointrange(aes(x = estimate,
+                      y = label_n,
+                      xmin = ci_lb,
+                      xmax = ci_ub, fill = significance, color = significance),
+                  shape = 23, size = 0.9, linewidth = 1.1) +
+  scale_fill_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
+  scale_color_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
+  labs(x = "Effect size estimate (±95 % CI)", y = NULL, color = "") +
+ # facet_wrap(~effect_size, scales = "free_x") +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    legend.position = "none")
+
+p_res
+
+dt %>% 
+  filter(eco_response == "plant_richness", 
+         yi_smdh < 0) %>% 
+  select(citation, response, species_or_group, data_point_id)
+# ah, woody species can respond negatively. that makes sense. 
+
+
+ggsave(plot = p_res, "builds/plots/intercept_only_results.png", dpi = 900, height = 3.5, width = 9)
+
+
+stats_table = dt_res_plot %>% 
+  mutate(i2 = round(i2, 2), 
+         p_val = round(p_val, 3), 
+         estimate_ci = paste0(round(estimate, 2), " [", round(ci_lb, 2), "; ", round(ci_ub, 2), "]")) %>% 
+  filter(effect_size == "SMD") %>%
+  select(Response = clean_response, `Estimate [95 % CI]` = estimate_ci, p = p_val, `I²` = i2)
+
+library(gt)
+
+stats_table %>%
+  gt()
+

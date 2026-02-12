@@ -3,6 +3,7 @@
 library(data.table)
 library(tidyverse)
 library(metafor)
+library(googlesheets4)
 
 
 update_data <- T
@@ -18,7 +19,8 @@ if(update_data){
 }
   
 dt_raw <- fread("data/raw_data/rewilding_meta_raw_dataset - dataset.csv") %>% 
-    filter(!is.na(citation), citation != "")
+    filter(!is.na(citation), citation != "") %>%
+  filter(!experimental_mechanism == "islands with and without herbivore")
 
 
 
@@ -107,8 +109,7 @@ unique(dt_traits[grepl("Ovis ammon musimon", Binomial), ]$Binomial)
 unique(dt_traits[grepl("ouflon", Common.Name), ]$Binomial)
 unique(dt_traits[grepl("Equus hemionus", Binomial), ]$Binomial)
 unique(dt_traits[grepl("Chelonoidis hoodensis", Binomial), ]$Binomial) #ah right, not a mammal or a bird. 
-
-
+unique(dt_traits[grepl("Pecari tajacu", Binomial), ]$Binomial) #ah right, not a mammal or a bird. 
 
 
 glimpse(dt_raw)
@@ -117,7 +118,7 @@ table(dt_raw$density_high_megafauna)
 
 dt_mega_raw <- dt_raw %>% 
   mutate(density_high_megafauna = gsub(",", ";", density_high_megafauna)) %>% 
-  dplyr::select(data_point_id, citation, density_high_megafauna) %>% 
+  dplyr::select(data_point_id, citation, experimental_mechanism, site_name, density_high_megafauna) %>% 
   separate_rows(density_high_megafauna, sep = ";\\s*") %>%
   separate(
     density_high_megafauna,
@@ -132,20 +133,27 @@ dt_mega_raw <- dt_raw %>%
     species == "Ovis aries" ~ "Ovis orientalis aries",
     species == "Capra hircus" ~ "Capra aegagrus hircus",
     species == "Ovis ammon musimon" ~ "Ovis orientalis",
+    species == "Dicotyles tajacu" ~ "Pecari tajacu"
   ), 
   individuals_ha = as.numeric(individuals_ha)) %>% 
   left_join(dt_traits[, c("species", "mass_kg", "common_name")]) %>% 
   mutate(mass_kg = ifelse(species == "Chelonoidis hoodensis", 50 ,mass_kg), ##seems to be a subspecies of Chelonoides niger which can get massive. But they only introduced young ones and it seems to be a smaller subspecies, so may be 50 kg is ok?
+         common_name = ifelse(species == "Chelonoidis hoodensis", "Giant Tortoise", common_name),
+         common_name = ifelse(common_name == "Cow", "Cattle", common_name),
+         common_name = ifelse(common_name == "Wild Yak", "Yak", common_name),
+         common_name = ifelse(common_name == "Common Fallow Deer; European Fallow Deer; Fallow Deer", "Fallow Deer", common_name),
          biomass_kg_ha = individuals_ha*mass_kg) 
 
+fwrite(dt_mega_raw, "data/processed_data/rewilding_meta_dataset_with_species_traits.csv")
+
 dt_sp <- dt_mega_raw %>% 
-  dplyr::select(citation, species) %>% 
+  dplyr::select(citation, site_name, experimental_mechanism, species) %>% 
   unique()
 
 table(dt_sp$species)
 
 dt_mega <- dt_mega_raw %>%
-  group_by(data_point_id) %>%
+  group_by(citation, experimental_mechanism, site_name, data_point_id) %>%
   summarise(
     total_biomass_kg_ha = sum(biomass_kg_ha, na.rm = TRUE),
     cwm_mass_kg = weighted.mean(mass_kg, individuals_ha, na.rm = TRUE),
@@ -198,6 +206,7 @@ dt_response <- dt_raw %>%
       species_or_group %in% c("arthropods", "butterflies",
                               "ground dwelling arthropodes", 
                               "litter invertebrates", "orthoptera", 
+                              "Grasshoppers", 
                               "understory invertebrates", "bumblebees") ~ "invertebrate_richness", 
     
     ### invertebrate diversity 
@@ -258,7 +267,7 @@ dt_response <- dt_raw %>%
                     "Aboveground fresh biomass", 
                     "Belowground dry biomass", 
                     "biomass", "shrub biomass") & 
-      species_or_group %in% c("all plants", "shrubs") ~ "plant_biomass", 
+      species_or_group %in% c("all plants", "shrubs", "herbaceous plants") ~ "plant_biomass", 
     
     ### plant C 
     response %in% c("Aboveground-C content",  "Belowground-C content", 
@@ -428,57 +437,15 @@ dt_comb <- dt_response %>%
   select(-c(resident_herbivores, strata_or_soil_depth, age_class, high_value_equals_high_response)) %>% 
   left_join(dt_mega) %>% 
   left_join(dt_es) %>% 
+  group_by(eco_response) %>% 
+  mutate(n_citations = n_distinct(citation)) %>% 
+  ungroup() %>% 
   as.data.table()
 
+table(dt_comb$experimental_mechanism)
 
-fwrite(dt_comb, "data/processed_data/clean_rewilding_meta_dataset.csv")
-
-# fuck around 
-plot(dt_comb$yi_smd, dt_comb$yi_smdh)
-
-plot(dt_comb$yi_smdh, dt_comb$yi_rom)
-cor.test(dt_comb$yi_smdh, dt_comb$yi_rom)
-
-
-dt_comb[abs(yi_smd) > 100]
-
-
-n_distinct(dt_comb$citation)
-dt_comb %>% 
-  select(eco_response, citation) %>% 
-  unique() %>% 
-  group_by(eco_response) %>% 
-  summarize(n = n()) %>% 
-  arrange(-n)
-
-dt_comb %>% 
-  group_by(citation, site_name, eco_response) %>% 
-  slice_max(time_series_clean) %>% 
-  group_by(eco_response) %>% 
-  filter(n() > 3) %>% 
-  ungroup() %>% 
-  ggplot() +
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  geom_point(aes(x = yi_smdh, y = eco_response), alpha = 0.2) +
-  theme_minimal()
-
-library(sf)
-library(rnaturalearth)
-
-world <- ne_countries(scale = "medium", returnclass = "sf") %>%
-  filter(continent != "Antarctica")
-
-dt_comb %>% 
-  group_by(eco_response) %>% 
-  filter(n() > 3) %>% 
-  select(citation, longitude, latitude) %>% 
-  unique() %>% 
-  st_as_sf(., coords = c("longitude", "latitude"), crs = 4326) %>% 
-  ggplot() +
-  geom_sf(data = world) +
-  geom_sf() +
-  theme_minimal()
   
+fwrite(dt_comb, "data/processed_data/clean_rewilding_meta_dataset.csv")
 
 
      

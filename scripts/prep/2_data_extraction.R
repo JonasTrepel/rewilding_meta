@@ -691,7 +691,106 @@ dt_dv_veg %>%
             sd = sd(X.Wood*100 , na.rm = T), 
             n = n()) 
 
+# Garrido et al 2022 Journal of Insect Conservation ----------------
 
+dt_grashopper_15 <- fread("data/extraction/Garrido et al 2022 Journal of Insect Conservation/2015_Orthopteran data to Jonas Trepel_260211.csv") %>% 
+  select(-contains("V1")) %>% 
+  pivot_longer(cols = c(
+    "Gomphocerippus rufus", 
+    "Mecostethus grossus", 
+    "Metrioptera roeselii", 
+    "Pholidoptera griseoaptera",
+    "Chorthippus albomarginatus", 
+    "Decticus verrucivorus",
+    "Tettigonia viridissima", 
+    "Chorthippus brunneus"), 
+    names_to = "species", values_to = "count") %>% 
+  mutate(plot_id = paste0(Enclosure, Exclosure, Plot))
+
+dt_grashopper_15 %>% 
+   mutate(count = ifelse(is.na(count), 0, count)) %>% 
+   group_by(Grazed, plot_id) %>% 
+   summarize(
+     species_richness = n_distinct(species[count > 0]),
+     abundance = sum(count),
+     .groups = "drop"
+   ) %>% 
+  group_by(Grazed) %>%
+  summarize(mean_sr = mean(species_richness , na.rm = T), 
+            sd_sr = sd(species_richness , na.rm = T), 
+            mean_ab = mean(abundance , na.rm = T), 
+            sd_ab = sd(abundance , na.rm = T), 
+            n = n()) 
+
+dt_grashopper_16 <- fread("data/extraction/Garrido et al 2022 Journal of Insect Conservation/2016_Orthopteran data to Jonas Trepel_260211.csv") %>% 
+  select(-contains("V1")) %>% 
+  filter(grazed != "Latrine") %>% 
+  pivot_longer(cols = c(
+    "Gomphocerippus rufus", 
+    "Mecostethus grossus", 
+    "Metrioptera roeselii", 
+    "Decticus verrucivorus",
+    "Chorthippus biguttulus", 
+    "Metrioptera brachyptera"), 
+    names_to = "species", values_to = "count") %>% 
+  mutate(plot_id = paste0(Enclosure, Exclosure, Plot))
+
+dt_grashopper_16 %>% 
+  mutate(count = ifelse(is.na(count), 0, count)) %>% 
+  group_by(grazed, plot_id) %>% 
+  summarize(
+    species_richness = n_distinct(species[count > 0]),
+    abundance = sum(count),
+    .groups = "drop"
+  ) %>% 
+  group_by(grazed) %>%
+  summarize(mean_sr = mean(species_richness , na.rm = T), 
+            sd_sr = sd(species_richness , na.rm = T), 
+            mean_ab = mean(abundance , na.rm = T), 
+            sd_ab = sd(abundance , na.rm = T), 
+            n = n()) 
+
+
+# Mata et al 2025 Applied Vegetation Science ----------------------------------------------
+
+dt_mata_sr <- fread("data/extraction/Mata et al 2025 Applied Vegetation Science/mata_species_richness.csv") %>% 
+  mutate(plot_id = paste(Site, Treatment, Type))
+unique(dt_mata_sr$Day)
+
+dt_mata_sr %>%
+  filter(Day %in% c(389, 518)) %>%
+  group_by(Day, Treatment, plot_id) %>% 
+  summarize(species_richness = n_distinct(Species)) %>% 
+  group_by(Day, Treatment) %>% 
+  summarize(mean = mean(species_richness , na.rm = T), 
+            sd = sd(species_richness , na.rm = T), 
+            n = n()) 
+
+
+dt_mata_h <- fread("data/extraction/Mata et al 2025 Applied Vegetation Science/mata_height.csv") %>% 
+  mutate(plot_id = paste(Site, Treatment, Type))
+
+dt_mata_h %>%
+  filter(Day %in% c(389, 518)) %>%
+  group_by(Day, Treatment, plot_id) %>% 
+  summarize(height = mean(Height)) %>% 
+  group_by(Day, Treatment) %>% 
+  summarize(mean = mean(height , na.rm = T), 
+            sd = sd(height , na.rm = T), 
+            n = n()) 
+
+
+dt_mata_b <- fread("data/extraction/Mata et al 2025 Applied Vegetation Science/mata_biomass.csv") %>% 
+  mutate(plot_id = paste(Site, Treatment, Type))
+
+dt_mata_b %>%
+  filter(day %in% c(3, 4)) %>%
+  group_by(day, Treatment, plot_id) %>% 
+  summarize(Biomass = mean(Biomass)) %>% 
+  group_by(day, Treatment) %>% 
+  summarize(mean = mean(Biomass , na.rm = T), 
+            sd = sd(Biomass , na.rm = T), 
+            n = n()) 
 
 ###########################################################################################################
 ##################################### Extract using metaDigitise ##########################################
