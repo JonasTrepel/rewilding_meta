@@ -65,7 +65,7 @@ c_sub_treat = c("introduc*",
 treat_string <-  paste0("(", paste0(unique(c_sub_treat), collapse = " OR "), ")")
 cat(treat_string)
 
-# outcome 
+# comparison 
 c_sub_out = c("experiment*",
                 "fenceline*",
                 "exclosure*",

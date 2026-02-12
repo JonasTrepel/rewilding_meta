@@ -167,17 +167,24 @@ p_res <- dt %>%
   ungroup() %>% 
   mutate(label_n = paste0(clean_response, " (n = ", n_citations, " [", n, "])"),
          label_n = reorder(label_n, n_citations)) %>% 
+  pivot_longer(cols = c(yi_cvr, yi_smdh), 
+               names_to = "effect_size", values_to = "yi") %>% 
+  mutate(effect_size = ifelse(effect_size == "yi_smdh", "SMD", "lnCVR"),
+         effect_size = reorder(effect_size, desc(effect_size)),
+         vi = ifelse(effect_size == "SMD", vi_smdh, vi_cvr), 
+         vi_inv = 1/vi) %>% 
   ggplot() +
   geom_vline(xintercept = 0, linetype = "dashed") +
-  geom_jitter(data =, aes(x = yi_smdh, y = label_n, size = 1/vi_smdh),
+  geom_jitter(data =, aes(x = yi, y = label_n, size = 1/vi_smdh),
               alpha = 0.2, color = "grey25",
               height = 0.1, width = 0.01) +
   labs(x = "Effect Size (Standardized Mean Difference)", y = NULL, color = "") +
-  # facet_wrap(~effect_size, scales = "free_x") +
+  facet_wrap(~effect_size, scales = "free_x") +
   theme_minimal() +
   theme(
     panel.grid = element_blank(),
-    legend.position = "none")
+    legend.position = "none", 
+    strip.text = element_text(size = 12, face = "italic"))
 
 p_res
 ggsave(plot = p_res, "builds/plots/supplement/small_sample_size_responses.png", dpi = 900, 

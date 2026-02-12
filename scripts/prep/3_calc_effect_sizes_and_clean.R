@@ -70,10 +70,22 @@ es_smdh <- escalc(measure = "SMDH",
                  data = dt_es_1) %>% 
   dplyr::select(vi_smdh = vi, yi_smdh = yi, data_point_id, citation)
 
+es_cvr <- escalc(measure = "CVR", 
+                  n1i = n_high_megafauna, 
+                  m1i = raw_mean_high_megafauna, 
+                  sd1i = error_high_megafauna, 
+                  n2i = n_low_megafauna, 
+                  m2i = raw_mean_low_megafauna, 
+                  sd2i = error_low_megafauna, 
+                  data = dt_es_1) %>% 
+  dplyr::select(vi_cvr = vi, yi_cvr = yi, data_point_id, citation)
+
+
 
 dt_es <- es_rom %>% 
   left_join(es_smd) %>% 
-  left_join(es_smdh)
+  left_join(es_smdh) %>% 
+  left_join(es_cvr)
 
 # 2. Sort Megafauna ---------------------------------
 

@@ -8,6 +8,8 @@ library(metafor)
 # load data ---------
 
 dt <- fread("data/processed_data/clean_rewilding_meta_dataset.csv")
+n_distinct(dt$site_name)
+n_distinct(dt$citation)
 
 # 0 get overview -------
 
@@ -58,13 +60,15 @@ for(i in 1:nrow(model_guide)){
     
     m_smd <- rma.mv(yi_smdh ~ 1, # intercept only model
                  V = vi_smdh, 
-                 random = list(~ 1 | site_name / citation), 
+                 random = list(~ 1 | site_name,
+                               ~ 1 | citation), 
                  data = dt_sub, 
                  method = "REML",  test = "t", dfs = "contain")
     
-    m_rom <- rma.mv(yi_rom ~ 1, # intercept only model
-                    V = vi_rom, 
-                    random = list(~ 1 | site_name / citation), 
+    m_cvr <- rma.mv(yi_cvr ~ 1, # intercept only model
+                    V = vi_cvr, 
+                    random = list(~ 1 | site_name,
+                                  ~ 1 | citation), 
                     data = dt_sub, 
                     method = "REML",  test = "t", dfs = "contain")
     
@@ -78,13 +82,13 @@ for(i in 1:nrow(model_guide)){
     P <- W - W %*% X %*% solve(t(X) %*% W %*% X) %*% t(X) %*% W
     (i2_smd = 100 * sum(m_smd$sigma2) / (sum(m_smd$sigma2) + (m_smd$k-m_smd$p)/sum(diag(P))))
     
-    #LnROM
+    #LnCVR
     
     
-    W <- diag(1/m_rom$vi)
-    X <- model.matrix(m_rom)
+    W <- diag(1/m_cvr$vi)
+    X <- model.matrix(m_cvr)
     P <- W - W %*% X %*% solve(t(X) %*% W %*% X) %*% t(X) %*% W
-    (i2_rom = 100 * sum(m_rom$sigma2) / (sum(m_rom$sigma2) + (m_rom$k-m_rom$p)/sum(diag(P))))
+    (i2_cvr = 100 * sum(m_cvr$sigma2) / (sum(m_cvr$sigma2) + (m_cvr$k-m_cvr$p)/sum(diag(P))))
     
     dt_smd <- data.frame(
       eco_response = model_guide[i, ]$eco_response, 
@@ -98,19 +102,19 @@ for(i in 1:nrow(model_guide)){
       i2 = i2_smd
     )
     
-    dt_rom <- data.frame(
+    dt_cvr <- data.frame(
       eco_response = model_guide[i, ]$eco_response, 
-      estimate = m_rom$b[1], 
-      ci_lb = m_rom$ci.lb[1],
-      ci_ub = m_rom$ci.ub[1],
-      p_val = m_rom$pval[1],
+      estimate = m_cvr$b[1], 
+      ci_lb = m_cvr$ci.lb[1],
+      ci_ub = m_cvr$ci.ub[1],
+      p_val = m_cvr$pval[1],
       n = nrow(dt_sub),
       n_citations = n_distinct(dt_sub$citation),
-      effect_size = "lnROM",
-      i2 = i2_rom
+      effect_size = "lnCVR",
+      i2 = i2_cvr
     )
     
-    dt_tmp = dt_smd %>% rbind(dt_rom)
+    dt_tmp = dt_smd %>% rbind(dt_cvr)
 
   # }, error = function(e) {
   #   return(NULL)
@@ -150,16 +154,18 @@ dt_res_plot = dt_res %>%
       eco_response == "bird_abundance" ~ "Bird abundance",
       eco_response == "bare_ground" ~ "Bare ground"), 
     significance = ifelse(ci_lb > 0 | ci_ub < 0, "Significant", "Not significant"), 
+    effect_size = reorder(effect_size, desc(effect_size)),
     clean_response = reorder(clean_response, estimate), 
     label_n = paste0(clean_response, " (n = ", n_citations, " [", n, "])"),
     label_n = reorder(label_n, estimate)) 
 
 
 dt_plot_points = dt %>%
-  pivot_longer(cols = c(yi_rom, yi_smdh), 
+  pivot_longer(cols = c(yi_cvr, yi_smdh), 
                names_to = "effect_size", values_to = "yi") %>% 
-  mutate(effect_size = ifelse(effect_size == "yi_smdh", "SMD", "lnROM"),
-         vi = ifelse(effect_size == "SMD", vi_smdh, vi_rom), 
+  mutate(effect_size = ifelse(effect_size == "yi_smdh", "SMD", "lnCVR"),
+         effect_size = reorder(effect_size, desc(effect_size)),
+         vi = ifelse(effect_size == "SMD", vi_smdh, vi_cvr), 
          vi_inv = 1/vi) %>% 
   left_join(dt_res_plot[, c("eco_response", "clean_response", "label_n")] %>% 
               unique()) %>% 
@@ -168,11 +174,10 @@ dt_plot_points = dt %>%
 
 
 p_res <- dt_res_plot %>% 
-  filter(effect_size == "SMD") %>% 
+ # filter(effect_size == "SMD") %>% 
   ggplot() +
   geom_vline(xintercept = 0, linetype = "dashed") +
-  geom_jitter(data = dt_plot_points %>% 
-                filter(effect_size == "SMD"), aes(x = yi, y = label_n, size = vi_inv),
+  geom_jitter(data = dt_plot_points, aes(x = yi, y = label_n, size = vi_inv),
               alpha = 0.2, color = "grey25",
               height = 0.1, width = 0.01) +
   geom_pointrange(aes(x = estimate,
@@ -183,11 +188,13 @@ p_res <- dt_res_plot %>%
   scale_fill_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
   scale_color_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
   labs(x = "Effect size estimate (±95 % CI)", y = NULL, color = "") +
- # facet_wrap(~effect_size, scales = "free_x") +
+  facet_wrap(~effect_size, scales = "free_x") +
   theme_minimal() +
   theme(
     panel.grid = element_blank(),
-    legend.position = "none")
+    legend.position = "none", 
+    axis.text.y = element_text(size = 12), 
+    strip.text = element_text(size = 12, face = "italic"))
 
 p_res
 
@@ -198,15 +205,15 @@ dt %>%
 # ah, woody species can respond negatively. that makes sense. 
 
 
-ggsave(plot = p_res, "builds/plots/intercept_only_results.png", dpi = 900, height = 3.5, width = 9)
+ggsave(plot = p_res, "builds/plots/intercept_only_results.png", dpi = 900, height = 3, width = 7.5)
 
 
 stats_table = dt_res_plot %>% 
   mutate(i2 = round(i2, 2), 
          p_val = round(p_val, 3), 
          estimate_ci = paste0(round(estimate, 2), " [", round(ci_lb, 2), "; ", round(ci_ub, 2), "]")) %>% 
-  filter(effect_size == "SMD") %>%
-  select(Response = clean_response, `Estimate [95 % CI]` = estimate_ci, p = p_val, `I²` = i2)
+ # filter(effect_size == "SMD") %>%
+  select(`Effect Size` = effect_size, Response = clean_response, `Estimate [95 % CI]` = estimate_ci, p = p_val, `I²` = i2)
 
 library(gt)
 

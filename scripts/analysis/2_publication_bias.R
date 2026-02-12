@@ -61,7 +61,8 @@ for(i in 1:nrow(model_guide)){
   m_smd <- rma.mv(yi = yi_smdh, # intercept only model
                   V = vi_smdh, 
                   mods = as.formula(model_guide[i, ]$formula), #invesrse square root of effective sample size 
-                  random = list(~ 1 | site_name / citation), 
+                  random = list(~ 1 | site_name,
+                                ~ 1 | citation), 
                   data = dt_sub, 
                   method = "REML",  test = "t", dfs = "contain")
   
