@@ -54,7 +54,7 @@ for(i in 1:nrow(model_guide)){
 #  result <- tryCatch({ 
     #build data
     dt_sub = dt[eval(parse(text = model_guide[i, ]$select)),] %>% 
-      group_by(citation) %>% 
+      group_by(citation, site_name) %>% 
       slice_max(time_series_clean)
 
     
@@ -145,7 +145,7 @@ dt_res_plot = dt_res %>%
       eco_response == "plant_diversity" ~ "Plant diversity",
       eco_response == "plant_cover" ~ "Plant cover",
       eco_response == "plant_biomass" ~ "Plant biomass",
-      eco_response == "plant_abundance" ~ "Plant abundance",
+      eco_response == "plant_abundance" ~ "Woody plant abundance",
       
       eco_response == "invertebrate_richness" ~ "Invertebrate richness",
       eco_response == "invertebrate_diversity" ~ "Invertebrate diversity",
@@ -154,6 +154,12 @@ dt_res_plot = dt_res %>%
       eco_response == "bird_abundance" ~ "Bird abundance",
       eco_response == "bare_ground" ~ "Bare ground"), 
     significance = ifelse(ci_lb > 0 | ci_ub < 0, "Significant", "Not significant"), 
+    muff_significance = case_when(
+      p_val <= 0.001 ~ "Very strong evidence", 
+      p_val > 0.001 & p_val <= 0.01 ~ "Strong evidence", 
+      p_val > 0.01 & p_val < 0.05 ~ "Moderate evidence", 
+      p_val >= 0.05 & p_val <= 0.1 ~ "Weak evidence", 
+      p_val > 0.1 ~ "No evidence"),
     effect_size = reorder(effect_size, desc(effect_size)),
     clean_response = reorder(clean_response, estimate), 
     label_n = paste0(clean_response, " (n = ", n_citations, " [", n, "])"),
@@ -183,10 +189,20 @@ p_res <- dt_res_plot %>%
   geom_pointrange(aes(x = estimate,
                       y = label_n,
                       xmin = ci_lb,
-                      xmax = ci_ub, fill = significance, color = significance),
+                      xmax = ci_ub, fill = muff_significance, color = muff_significance),
                   shape = 23, size = 0.9, linewidth = 1.1) +
-  scale_fill_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
-  scale_color_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
+ # scale_fill_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
+ # scale_color_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
+  scale_fill_manual(values = c("Very strong evidence" = "orangered2", 
+                               "Strong evidence" = "orangered2", 
+                               "Moderate evidence" = "orangered2", 
+                               "Weak evidence" = "orangered4",
+                               "No evidence" = "wheat3")) +
+  scale_color_manual(values = c("Very strong evidence" = "orangered2", 
+                               "Strong evidence" = "orangered2", 
+                               "Moderate evidence" = "orangered2", 
+                               "Weak evidence" = "orangered4",
+                               "No evidence" = "wheat3")) +
   labs(x = "Effect size estimate (±95 % CI)", y = NULL, color = "") +
   facet_wrap(~effect_size, scales = "free_x") +
   theme_minimal() +
@@ -194,7 +210,9 @@ p_res <- dt_res_plot %>%
     panel.grid = element_blank(),
     legend.position = "none", 
     axis.text.y = element_text(size = 12), 
-    strip.text = element_text(size = 12, face = "italic"))
+    strip.text = element_text(size = 12, face = "italic"), 
+    plot.background  = element_rect(fill = "white", color = NA),
+    panel.background = element_rect(fill = "white", color = NA))
 
 p_res
 
@@ -203,6 +221,12 @@ dt %>%
          yi_smdh < 0) %>% 
   select(citation, response, species_or_group, data_point_id)
 # ah, woody species can respond negatively. that makes sense. 
+
+
+dt %>% 
+  filter(eco_response == "plant_abundance", 
+         yi_smdh < 0) %>% 
+  select(citation, response, species_or_group, data_point_id)
 
 
 ggsave(plot = p_res, "builds/plots/intercept_only_results.png", dpi = 900, height = 3, width = 7.5)

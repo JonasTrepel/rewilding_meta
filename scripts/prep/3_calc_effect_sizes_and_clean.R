@@ -20,7 +20,9 @@ if(update_data){
   
 dt_raw <- fread("data/raw_data/rewilding_meta_raw_dataset - dataset.csv") %>% 
     filter(!is.na(citation), citation != "") %>%
-  filter(!experimental_mechanism == "islands with and without herbivore")
+  filter(!experimental_mechanism == "islands with and without herbivore") %>% 
+  mutate(error_high_megafauna = ifelse(error_high_megafauna == 0, 0.001, error_high_megafauna), #replace 0 error with tiny number, else effect size calculation will fail
+         error_low_megafauna = ifelse(error_low_megafauna == 0, 0.001, error_low_megafauna))
 
 
 
@@ -360,7 +362,7 @@ dt_response <- dt_raw %>%
                     "Microbial C", 
                     "soil C content", 
                     "organic matter content") & 
-      species_or_group %in% c("soil") ~ "soil_n",
+      species_or_group %in% c("soil") ~ "soil_c",
     
     ### soil P 
     response %in% c("Soluble reactive P", 

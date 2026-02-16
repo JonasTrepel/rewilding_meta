@@ -17,6 +17,8 @@ dt_sp <- dt_mega_raw %>%
 
 table(dt_sp$species)
 
+scico(palette = "batlow", n = 5)
+c("#001959", "#215F61", "#818231", "#F19D6B", "#F9CCF9")
 
 p_sp_biomass = dt_mega_raw %>% 
   dplyr::select(citation, site_name, species, species_label, mass_kg, biomass_kg_ha) %>% 
@@ -24,10 +26,12 @@ p_sp_biomass = dt_mega_raw %>%
   mutate(species_label = reorder(species_label, biomass_kg_ha)) %>% 
   filter(!is.na(biomass_kg_ha)) %>% 
   ggplot() +
-  geom_boxplot(aes(y = species_label, x = biomass_kg_ha*100)) +
+  geom_boxplot(aes(y = species_label, x = biomass_kg_ha*100), fill = "#818231", alpha = 0.5) +
   labs(y = "", x = "Species Biomass (kg km⁻²)", title = "B") +
   theme_minimal() +
-  theme(panel.grid = element_blank())
+  theme(panel.grid = element_blank(), 
+        plot.background  = element_rect(fill = "white", color = NA),
+        panel.background = element_rect(fill = "white", color = NA))
 p_sp_biomass
 
 dt_mega <- dt_mega_raw %>%
@@ -44,13 +48,15 @@ dt_mega <- dt_mega_raw %>%
 
 p_total_biomass <- dt_mega %>%
   ggplot() +
-  geom_boxplot(aes(y = 1, x = total_biomass_kg_ha*100)) +
+  geom_boxplot(aes(y = 1, x = total_biomass_kg_ha*100), fill = "#818231", alpha = 0.5) +
   labs(y = "", x = "Total Biomass (kg km⁻²)", title = "C") +
  # geom_point(aes(x = mean(total_biomass_kg_ha), y = 1), color = "orange", shape = 18, size = 5) +
   geom_vline(linetype = "dashed", xintercept = mean(dt_mega$total_biomass_kg_ha*100), color = "orange", linewidth = 1.1) +
   theme_minimal() +
   theme(panel.grid = element_blank(), 
-        axis.text.y = element_blank() )
+        axis.text.y = element_blank(), 
+        plot.background  = element_rect(fill = "white", color = NA),
+        panel.background = element_rect(fill = "white", color = NA) )
 p_total_biomass  
 
 
@@ -72,7 +78,9 @@ p_studies = dt_sp_plot %>%
   theme_minimal() +
   scale_fill_scico_d(palette = "batlow", begin = 0.2, end = 0.8) +
   theme(legend.position = c(.5, .2),
-        panel.grid = element_blank())
+        panel.grid = element_blank(), 
+        plot.background  = element_rect(fill = "white", color = NA),
+        panel.background = element_rect(fill = "white", color = NA))
 
 p_studies
 
@@ -112,7 +120,9 @@ p_map = dt %>%
   geom_sf(aes(color = included), alpha = 0.75, size = 1.25) +
   theme_void() +
   labs(color = "") +
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom", 
+        plot.background  = element_rect(fill = "white", color = NA),
+        panel.background = element_rect(fill = "white", color = NA))
 p_map
 
 ggsave(plot = p_map, "builds/plots/map.png", dpi = 900)
@@ -120,6 +130,12 @@ ggsave(plot = p_map, "builds/plots/map.png", dpi = 900)
 ## 3. Responses with Small Sample Size -------------------
 
 dt <- fread("data/processed_data/clean_rewilding_meta_dataset.csv")
+nrow(dt)
+
+dt %>% 
+  group_by(eco_response, citation, site_name) %>% 
+  slice_max(time_series_clean) %>% 
+  nrow()
 
 p_res <- dt %>% 
   filter(n_citations < 3) %>% 
@@ -135,6 +151,7 @@ p_res <- dt %>%
       eco_response == "invertebrate_diversity" ~ "Invertebrate diversity",
       eco_response == "soil_n" ~ "Soil N",
       eco_response == "soil_cn" ~ "Soil C:N",
+      eco_response == "soil_c" ~ "Soil C",
       eco_response == "net_nitrification" ~ "Net nitrification",
       eco_response == "soil_cp" ~ "Soil C:P",
       eco_response == "soil_np" ~ "Soil N:P",
@@ -184,8 +201,26 @@ p_res <- dt %>%
   theme(
     panel.grid = element_blank(),
     legend.position = "none", 
-    strip.text = element_text(size = 12, face = "italic"))
+    strip.text = element_text(size = 12, face = "italic"), 
+    plot.background  = element_rect(fill = "white", color = NA),
+    panel.background = element_rect(fill = "white", color = NA))
 
 p_res
 ggsave(plot = p_res, "builds/plots/supplement/small_sample_size_responses.png", dpi = 900, 
        height = 8, width = 7)
+
+
+## 4. Play around ---------------------------------------
+n_distinct(dt$citation)
+
+dt %>% 
+  select(site_name, site_size_ha) %>% 
+  unique() %>% 
+  pull(site_size_ha) %>% 
+  quantile(na.rm = T)
+
+dt %>% 
+  select(site_name, years_since_introduction) %>% 
+  unique() %>% 
+  pull(years_since_introduction) %>% 
+  quantile(na.rm = T)
