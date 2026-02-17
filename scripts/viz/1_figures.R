@@ -182,8 +182,8 @@ p_res <- dt %>%
   group_by(eco_response) %>% 
   mutate(n = n()) %>% 
   ungroup() %>% 
-  mutate(label_n = paste0(clean_response, " (n = ", n_citations, " [", n, "])"),
-         label_n = reorder(label_n, n_citations)) %>% 
+  mutate(label_n = paste0(clean_response, " (n = ", n, " [", n_citations, "])"),
+         label_n = reorder(label_n, n)) %>% 
   pivot_longer(cols = c(yi_cvr, yi_smdh), 
                names_to = "effect_size", values_to = "yi") %>% 
   mutate(effect_size = ifelse(effect_size == "yi_smdh", "SMD", "lnCVR"),
@@ -195,7 +195,7 @@ p_res <- dt %>%
   geom_jitter(data =, aes(x = yi, y = label_n, size = 1/vi_smdh),
               alpha = 0.2, color = "grey25",
               height = 0.1, width = 0.01) +
-  labs(x = "Effect Size (Standardized Mean Difference)", y = NULL, color = "") +
+  labs(x = "Effect Size", y = NULL, color = "") +
   facet_wrap(~effect_size, scales = "free_x") +
   theme_minimal() +
   theme(
@@ -214,6 +214,19 @@ ggsave(plot = p_res, "builds/plots/supplement/small_sample_size_responses.png", 
 n_distinct(dt$citation)
 
 dt %>% 
+  filter(eco_response == "plant_richness") %>% 
+  group_by(citation, site_name) %>% 
+  slice_max(time_series_clean) %>%
+  unique() %>% 
+  pull(species_or_group) %>% 
+  table()
+
+dt %>% 
+  select(citation, doi) %>% 
+  unique() %>% 
+  View()
+
+dt %>% 
   select(site_name, site_size_ha) %>% 
   unique() %>% 
   pull(site_size_ha) %>% 
@@ -224,3 +237,25 @@ dt %>%
   unique() %>% 
   pull(years_since_introduction) %>% 
   quantile(na.rm = T)
+
+
+dt %>% 
+  select(site_name, total_biomass_kg_ha) %>% 
+  unique() %>% 
+  filter(total_biomass_kg_ha >0) %>% 
+  pull(total_biomass_kg_ha) %>% 
+  quantile(na.rm = T)
+
+dt %>% 
+  select(site_name, total_biomass_kg_ha) %>% 
+  unique() %>% 
+  filter(total_biomass_kg_ha >0) %>% 
+  pull(total_biomass_kg_ha) %>% 
+  mean(na.rm = T)
+
+dt %>% 
+  select(citation, site_name, total_biomass_kg_ha) %>% 
+  unique() %>% 
+  filter(total_biomass_kg_ha < 10)
+
+

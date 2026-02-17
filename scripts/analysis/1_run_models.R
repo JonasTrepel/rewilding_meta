@@ -160,9 +160,15 @@ dt_res_plot = dt_res %>%
       p_val > 0.01 & p_val < 0.05 ~ "Moderate evidence", 
       p_val >= 0.05 & p_val <= 0.1 ~ "Weak evidence", 
       p_val > 0.1 ~ "No evidence"),
+    p_levels = case_when(
+      p_val <= 0.001 ~ "p < 0.05", 
+      p_val > 0.001 & p_val <= 0.01 ~ "p < 0.05", 
+      p_val > 0.01 & p_val < 0.05 ~ "p < 0.05", 
+      p_val >= 0.05 & p_val <= 0.1 ~ "p < 0.1", 
+      p_val > 0.1 ~ "p ≥ 0.1"),
     effect_size = reorder(effect_size, desc(effect_size)),
     clean_response = reorder(clean_response, estimate), 
-    label_n = paste0(clean_response, " (n = ", n_citations, " [", n, "])"),
+    label_n = paste0(n, " (", n_citations,")"),
     label_n = reorder(label_n, estimate)) 
 
 
@@ -176,39 +182,63 @@ dt_plot_points = dt %>%
   left_join(dt_res_plot[, c("eco_response", "clean_response", "label_n")] %>% 
               unique()) %>% 
   filter(!is.na(label_n))
-  
 
+dt_annot <- dt_res_plot %>%
+  dplyr::filter(effect_size == "SMD") %>% 
+  dplyr::select(clean_response, label_n, effect_size) %>% 
+  unique()
+  
+library(scico)
+scico(palette = "lajolla", n = 10)
+c("#191900", "#33220F", "#5A2F22", "#8E3F3D", "#C7504B", "#DF714F", "#E69352", "#EEB554", "#F8DE7A", "#FFFECB")
+
+scico(palette = "bamako", n = 10)
+#"#003A46" "#0E433F" "#1F4E34" "#355E26" "#527014" "#728202" "#988C02" "#BEA82E" "#E1C76D" "#FFE5AC"
 
 p_res <- dt_res_plot %>% 
  # filter(effect_size == "SMD") %>% 
   ggplot() +
   geom_vline(xintercept = 0, linetype = "dashed") +
-  geom_jitter(data = dt_plot_points, aes(x = yi, y = label_n, size = vi_inv),
+  geom_jitter(data = dt_plot_points, aes(x = yi, y = clean_response, size = vi_inv),
               alpha = 0.2, color = "grey25",
               height = 0.1, width = 0.01) +
   geom_pointrange(aes(x = estimate,
-                      y = label_n,
+                      y = clean_response,
                       xmin = ci_lb,
-                      xmax = ci_ub, fill = muff_significance, color = muff_significance),
+                      xmax = ci_ub, fill = p_levels, color = p_levels),
                   shape = 23, size = 0.9, linewidth = 1.1) +
  # scale_fill_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
  # scale_color_manual(values = c("Significant" = "#D55E00", "Not significant" = "wheat3")) +
-  scale_fill_manual(values = c("Very strong evidence" = "orangered2", 
-                               "Strong evidence" = "orangered2", 
-                               "Moderate evidence" = "orangered2", 
-                               "Weak evidence" = "orangered4",
-                               "No evidence" = "wheat3")) +
-  scale_color_manual(values = c("Very strong evidence" = "orangered2", 
-                               "Strong evidence" = "orangered2", 
-                               "Moderate evidence" = "orangered2", 
-                               "Weak evidence" = "orangered4",
-                               "No evidence" = "wheat3")) +
-  labs(x = "Effect size estimate (±95 % CI)", y = NULL, color = "") +
+  # scale_fill_manual(values = c("Very strong evidence" = "#5A2F22", 
+  #                              "Strong evidence" = "#8E3F3D", 
+  #                              "Moderate evidence" = "#C7504B", 
+  #                              "Weak evidence" = "#DF714F",
+  #                              "No evidence" = "wheat3")) +
+  # scale_color_manual(values = c("Very strong evidence" = "#5A2F22", 
+  #                              "Strong evidence" = "#8E3F3D", 
+  #                              "Moderate evidence" = "#C7504B", 
+  #                              "Weak evidence" = "#DF714F",
+  #                              "No evidence" = "wheat3")) +
+  scale_fill_manual(values = c("p < 0.05" = "#DF714F",
+                               "p < 0.1" = "#5A2F22",
+                               "p ≥ 0.1" = "wheat3")) +
+  scale_color_manual(values = c("p < 0.05" = "#DF714F",
+                                "p < 0.1" = "#5A2F22",
+                                "p ≥ 0.1" = "wheat3")) +
+  geom_text(data = dt_annot,
+            aes(x = -5,
+                y = clean_response,
+                label = label_n),
+            hjust = 0, 
+            size = 2.5,
+            inherit.aes = FALSE, fontface = "italic", color = "#33220F", alpha = .9) +
+  labs(x = "Effect size estimate (±95 % CI)", y = NULL, color = "", fill = "") +
+  guides(size = "none") + 
   facet_wrap(~effect_size, scales = "free_x") +
   theme_minimal() +
   theme(
     panel.grid = element_blank(),
-    legend.position = "none", 
+    legend.position = "bottom", 
     axis.text.y = element_text(size = 12), 
     strip.text = element_text(size = 12, face = "italic"), 
     plot.background  = element_rect(fill = "white", color = NA),
@@ -229,7 +259,7 @@ dt %>%
   select(citation, response, species_or_group, data_point_id)
 
 
-ggsave(plot = p_res, "builds/plots/intercept_only_results.png", dpi = 900, height = 3, width = 7.5)
+ggsave(plot = p_res, "builds/plots/intercept_only_results.png", dpi = 900, height = 4, width = 8)
 
 
 stats_table = dt_res_plot %>% 

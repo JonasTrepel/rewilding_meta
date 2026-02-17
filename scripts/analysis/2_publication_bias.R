@@ -134,7 +134,7 @@ p_res <- dt_res_plot %>%
   ggplot() +
   geom_vline(xintercept = 0, linetype = "dashed") +
   geom_pointrange(aes(x = estimate,
-                      y = label_n,
+                      y = clean_response,
                       xmin = ci_lb,
                       xmax = ci_ub, fill = significance, color = significance),
                   shape = 23, size = 0.9, linewidth = 1.1) +
