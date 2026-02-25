@@ -166,6 +166,7 @@ dt_res_plot = dt_res %>%
       p_val > 0.01 & p_val < 0.05 ~ "p < 0.05", 
       p_val >= 0.05 & p_val <= 0.1 ~ "p < 0.1", 
       p_val > 0.1 ~ "p ≥ 0.1"),
+    effect_size = ifelse(effect_size == "SMD", "Effect on Mean\n(SMD)", "Effect on Heterogeneity\n(lnCVR)"),
     effect_size = reorder(effect_size, desc(effect_size)),
     clean_response = reorder(clean_response, estimate), 
     label_n = paste0(n, " (", n_citations,")"),
@@ -175,16 +176,16 @@ dt_res_plot = dt_res %>%
 dt_plot_points = dt %>%
   pivot_longer(cols = c(yi_cvr, yi_smdh), 
                names_to = "effect_size", values_to = "yi") %>% 
-  mutate(effect_size = ifelse(effect_size == "yi_smdh", "SMD", "lnCVR"),
+  mutate(effect_size = ifelse(effect_size == "yi_smdh", "Effect on Mean\n(SMD)", "Effect on Heterogeneity\n(lnCVR)"),
          effect_size = reorder(effect_size, desc(effect_size)),
-         vi = ifelse(effect_size == "SMD", vi_smdh, vi_cvr), 
+         vi = ifelse(effect_size == "Effect on Mean\n(SMD)", vi_smdh, vi_cvr), 
          vi_inv = 1/vi) %>% 
   left_join(dt_res_plot[, c("eco_response", "clean_response", "label_n")] %>% 
               unique()) %>% 
   filter(!is.na(label_n))
 
 dt_annot <- dt_res_plot %>%
-  dplyr::filter(effect_size == "SMD") %>% 
+  dplyr::filter(effect_size == "Effect on Mean\n(SMD)") %>% 
   dplyr::select(clean_response, label_n, effect_size) %>% 
   unique()
   
@@ -269,8 +270,5 @@ stats_table = dt_res_plot %>%
  # filter(effect_size == "SMD") %>%
   select(`Effect Size` = effect_size, Response = clean_response, `Estimate [95 % CI]` = estimate_ci, p = p_val, `I²` = i2)
 
-library(gt)
-
-stats_table %>%
-  gt()
+fwrite(stats_table, "builds/model_results/stats_table.csv")
 

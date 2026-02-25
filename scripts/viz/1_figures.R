@@ -127,6 +127,35 @@ p_map
 
 ggsave(plot = p_map, "builds/plots/map.png", dpi = 900)
 
+p_inset_map = dt %>% 
+  group_by(eco_response) %>% 
+  mutate(included = case_when(
+    n_citations >= 3 ~ "Included",
+    n_citations < 3 ~ "Sample size too small")) %>% 
+  arrange(desc(included)) %>%
+  filter(!included == "island") %>% 
+  select(included, citation, longitude, latitude) %>% 
+  unique() %>% 
+  st_as_sf(., coords = c("longitude", "latitude"), crs = 4326) %>% 
+  st_transform(., crs = "ESRI:54009") %>% 
+  ggplot() +
+  scale_color_scico_d(palette = "batlow", begin = 0.2, end = 0.8) +
+  geom_sf(data = world %>% st_transform(., crs = "ESRI:54009"), color = "wheat3", fill = "wheat3", alpha = 0.4 ) +
+  geom_sf(aes(color = included), alpha = 0.75, size = 1.25) +
+  coord_sf(
+    xlim = c(-800000, 1500000), 
+    ylim = c(4300000, 7000000),
+    expand = FALSE
+  ) +
+  theme_void() +
+  labs(color = "") +
+  theme(legend.position = "none", 
+        plot.background  = element_rect(fill = "white", color = NA),
+        panel.background = element_rect(fill = "white", color = NA))
+p_inset_map
+
+ggsave(plot = p_inset_map, "builds/plots/inset_map.png", dpi = 900, height = 3.5, width = 4.5)
+
 ## 3. Responses with Small Sample Size -------------------
 
 dt <- fread("data/processed_data/clean_rewilding_meta_dataset.csv")
