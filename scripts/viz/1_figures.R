@@ -166,6 +166,7 @@ dt %>%
   slice_max(time_series_clean) %>% 
   nrow()
 
+
 p_res <- dt %>% 
   filter(n_citations < 3) %>% 
   group_by(citation) %>% 
@@ -250,22 +251,23 @@ dt %>%
   pull(species_or_group) %>% 
   table()
 
-dt %>% 
-  select(citation, doi) %>% 
-  unique() %>% 
-  View()
+# dt %>% 
+#   select(citation, doi) %>% 
+#   unique() %>% 
+#   View()
 
 dt %>% 
   select(site_name, site_size_ha) %>% 
   unique() %>% 
   pull(site_size_ha) %>% 
-  quantile(na.rm = T)
+  quantile(na.rm = T) %>% 
+  round(.,)
 
 dt %>% 
   select(site_name, years_since_introduction) %>% 
   unique() %>% 
   pull(years_since_introduction) %>% 
-  quantile(na.rm = T)
+  quantile(na.rm = T) 
 
 
 dt %>% 
@@ -287,4 +289,14 @@ dt %>%
   unique() %>% 
   filter(total_biomass_kg_ha < 10)
 
+
+dt %>% 
+  group_by(eco_response, citation, site_name) %>% 
+  slice_max(time_series_clean) %>% 
+  filter(eco_response == "invertebrate_abundance") %>% 
+  select(yi_smdh)
+
+binom.test(5, 6)
+
+binom.test(10, 18)
 

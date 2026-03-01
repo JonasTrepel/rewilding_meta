@@ -124,6 +124,7 @@ unique(dt_traits[grepl("ouflon", Common.Name), ]$Binomial)
 unique(dt_traits[grepl("Equus hemionus", Binomial), ]$Binomial)
 unique(dt_traits[grepl("Chelonoidis hoodensis", Binomial), ]$Binomial) #ah right, not a mammal or a bird. 
 unique(dt_traits[grepl("Pecari tajacu", Binomial), ]$Binomial) #ah right, not a mammal or a bird. 
+unique(dt_traits[grepl("Cervus canadensis", Binomial), ]$Binomial) #ah right, not a mammal or a bird. 
 
 
 glimpse(dt_raw)

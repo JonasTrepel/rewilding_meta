@@ -792,6 +792,27 @@ dt_mata_b %>%
             sd = sd(Biomass , na.rm = T), 
             n = n()) 
 
+
+# Wilsey & Martin 2015 Restoration Ecology --------------------------------------
+dt_wm <- fread("data/extraction/Wilsey & Martin 2015 Restoration Ecology/diversity.csv") %>% 
+  mutate(plot_id = paste(block, plot, treatment, grazed), 
+         herbivore_treatment = ifelse(grazed == "grazed", "grazed", "ungrazed")) %>% 
+  filter(treatment == "C")
+
+dt_wm %>%
+  group_by(herbivore_treatment) %>% 
+  summarize(mean = mean(S , na.rm = T), 
+            sd = sd(S , na.rm = T), 
+            n = n()) 
+
+dt_wm %>%
+  group_by(herbivore_treatment) %>% 
+  summarize(mean = mean(Div , na.rm = T), 
+            sd = sd(Div , na.rm = T), 
+            n = n()) 
+
+
+
 ###########################################################################################################
 ##################################### Extract using metaDigitise ##########################################
 ###########################################################################################################
