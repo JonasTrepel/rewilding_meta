@@ -6,7 +6,7 @@ library(metafor)
 library(googlesheets4)
 
 
-update_data <- T
+update_data <- F #should the script fetch the most recent version of the raw dataset? The repository should contain the most up to date version anyway though
 
 if(update_data){
   #get most recent version from google docs
