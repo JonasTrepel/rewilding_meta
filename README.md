@@ -1,7 +1,6 @@
 This repository contains all data and code associated with the manuscript:
 
-**“Trophic rewilding promotes plant diversity and open habitats”**  
-*Trepel, Atkinson, Lundgren, Kamp, Knarberg, Rieckmann, le Roux, Svenning & Buitenwerf* (under review).
+**“Trophic rewilding promotes plant diversity and open habitats”** (under review).
 
 --
 
