@@ -133,7 +133,7 @@ table(dt_raw$density_high_megafauna)
 
 dt_mega_raw <- dt_raw %>% 
   mutate(density_high_megafauna = gsub(",", ";", density_high_megafauna)) %>% 
-  dplyr::select(data_point_id, citation, experimental_mechanism, site_name, density_high_megafauna) %>% 
+  dplyr::select(data_point_id, time_series_clean, citation, experimental_mechanism, site_name, density_high_megafauna) %>% 
   separate_rows(density_high_megafauna, sep = ";\\s*") %>%
   separate(
     density_high_megafauna,

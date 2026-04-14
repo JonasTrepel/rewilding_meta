@@ -26,8 +26,10 @@ p_sp_biomass = dt_mega_raw %>%
   mutate(species_label = reorder(species_label, biomass_kg_ha)) %>% 
   filter(!is.na(biomass_kg_ha)) %>% 
   ggplot() +
+  geom_vline(xintercept = 10000, linetype = "dashed") +
   geom_boxplot(aes(y = species_label, x = biomass_kg_ha*100), fill = "#818231", alpha = 0.5) +
-  labs(y = "", x = "Species Biomass (kg km⁻²)", title = "B") +
+  scale_x_continuous(sec.axis = sec_axis(~ ., name = "")) + 
+  labs(y = "", x = "Species Biomass Density (kg km⁻²)", title = "B") +
   theme_minimal() +
   theme(panel.grid = element_blank(), 
         plot.background  = element_rect(fill = "white", color = NA),
@@ -35,6 +37,9 @@ p_sp_biomass = dt_mega_raw %>%
 p_sp_biomass
 
 dt_mega <- dt_mega_raw %>%
+  # group_by(citation, site_name) %>% 
+  # slice_max(time_series_clean) %>% 
+  filter(!is.na(biomass_kg_ha)) %>% 
   group_by(citation, experimental_mechanism, site_name, data_point_id) %>%
   summarise(
     total_biomass_kg_ha = sum(biomass_kg_ha, na.rm = TRUE),
@@ -43,21 +48,29 @@ dt_mega <- dt_mega_raw %>%
     metabolic_biomass_ha = sum((mass_kg^0.75) * individuals_ha, na.rm = TRUE)
   ) %>% 
   as.data.table() %>% 
-  filter(!is.na(total_biomass_kg_ha))
+  filter(!is.na(total_biomass_kg_ha)) %>% 
+  dplyr::select(-data_point_id) %>%
+  unique()
 
 
 p_total_biomass <- dt_mega %>%
   ggplot() +
+  geom_vline(xintercept = 10000, linetype = "dashed") +
   geom_boxplot(aes(y = 1, x = total_biomass_kg_ha*100), fill = "#818231", alpha = 0.5) +
-  labs(y = "", x = "Total Biomass (kg km⁻²)", title = "C") +
+  labs(y = "", x = "Total Biomass Density (kg km⁻²)", title = "C") +
  # geom_point(aes(x = mean(total_biomass_kg_ha), y = 1), color = "orange", shape = 18, size = 5) +
   geom_vline(linetype = "dashed", xintercept = mean(dt_mega$total_biomass_kg_ha*100), color = "orange", linewidth = 1.1) +
+  scale_x_continuous(sec.axis = sec_axis(~ ., name = "")) + 
   theme_minimal() +
   theme(panel.grid = element_blank(), 
         axis.text.y = element_blank(), 
         plot.background  = element_rect(fill = "white", color = NA),
         panel.background = element_rect(fill = "white", color = NA) )
 p_total_biomass  
+
+median(dt_mega$total_biomass_kg_ha*100)
+range(dt_mega$total_biomass_kg_ha*100)
+mean(dt_mega$total_biomass_kg_ha*100)
 
 
 dt_sp_plot = dt_sp %>% 
@@ -77,6 +90,7 @@ p_studies = dt_sp_plot %>%
   labs(y = "", x = "Count", fill = "", title = "A") +
   theme_minimal() +
   scale_fill_scico_d(palette = "batlow", begin = 0.2, end = 0.8) +
+  scale_x_continuous(sec.axis = sec_axis(~ ., name = "")) + 
   theme(legend.position = c(.5, .2),
         panel.grid = element_blank(), 
         plot.background  = element_rect(fill = "white", color = NA),
