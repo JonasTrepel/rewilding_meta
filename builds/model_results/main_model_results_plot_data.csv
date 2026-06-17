@@ -1,0 +1,37 @@
+eco_response,estimate,ci_lb,ci_ub,p_val,n,n_citations,effect_size,i2,clean_response,significance,muff_significance,p_levels,label_n
+plant_richness,1.15370443414065,0.357798303764961,1.94961056451633,0.00696212287881897,53,19,"Effect on Mean
+(SMD)",95.5503591563009,Plant richness,Significant,Strong evidence,p < 0.05,53 (19)
+plant_richness,-0.186276735908786,-0.377528880203461,0.00497540838588936,0.0556223104570549,53,19,"Effect on Heterogeneity
+(lnCVR)",42.2394110225472,Plant richness,Not significant,Weak evidence,p < 0.1,53 (19)
+plant_height,-0.924504189366611,-1.20834490408425,-0.640663474648975,0.000207764999276642,14,7,"Effect on Mean
+(SMD)",8.80657008646334,Plant height,Significant,Very strong evidence,p < 0.05,14 (7)
+plant_height,0.230029263911184,-0.0250241930818796,0.485082720904247,0.0694451458928025,14,7,"Effect on Heterogeneity
+(lnCVR)",15.4489527848664,Plant height,Not significant,Weak evidence,p < 0.1,14 (7)
+plant_evenness,0.526913085167992,-0.548135494646051,1.60196166498204,0.216707676436454,6,4,"Effect on Mean
+(SMD)",89.7844562616307,Plant evenness,Not significant,No evidence,p ≥ 0.1,6 (4)
+plant_evenness,-0.0851682691736473,-0.578468896879065,0.408132358531771,0.620954313145294,6,4,"Effect on Heterogeneity
+(lnCVR)",72.9279089184344,Plant evenness,Not significant,No evidence,p ≥ 0.1,6 (4)
+plant_diversity,0.430490264678592,-0.0025158879426847,0.863496417299869,0.0510567701448015,14,9,"Effect on Mean
+(SMD)",71.8570300119311,Plant diversity,Not significant,Weak evidence,p < 0.1,14 (9)
+plant_diversity,-0.177301013229237,-0.408091029099665,0.0534890026411904,0.114414851081282,14,9,"Effect on Heterogeneity
+(lnCVR)",37.0457511507177,Plant diversity,Not significant,No evidence,p ≥ 0.1,14 (9)
+plant_cover,0.126125765462755,-0.805925862150854,1.05817739307636,0.751814171204595,16,7,"Effect on Mean
+(SMD)",90.7283344533509,Plant cover,Not significant,No evidence,p ≥ 0.1,16 (7)
+plant_cover,-0.379783466507541,-0.928193695752189,0.168626762737107,0.141101375314083,16,7,"Effect on Heterogeneity
+(lnCVR)",77.9361753529619,Plant cover,Not significant,No evidence,p ≥ 0.1,16 (7)
+plant_biomass,-0.721594955115727,-1.1136519187312,-0.329537991500255,0.00693345330656888,22,5,"Effect on Mean
+(SMD)",1.83007635769097e-07,Plant biomass,Significant,Strong evidence,p < 0.05,22 (5)
+plant_biomass,0.114427117737883,-0.573542345120435,0.802396580596201,0.668226641318733,22,5,"Effect on Heterogeneity
+(lnCVR)",62.1906637442223,Plant biomass,Not significant,No evidence,p ≥ 0.1,22 (5)
+plant_abundance,-0.962508780226482,-2.23561006852661,0.310592508073642,0.082918126141463,3,3,"Effect on Mean
+(SMD)",37.3557720512943,Woody plant abundance,Not significant,Weak evidence,p < 0.1,3 (3)
+plant_abundance,0.241291421804044,-0.307801858280194,0.790384701888281,0.19921958289809,3,3,"Effect on Heterogeneity
+(lnCVR)",4.94784848393604e-09,Woody plant abundance,Not significant,No evidence,p ≥ 0.1,3 (3)
+invertebrate_richness,0.475283207556323,-0.559887478663545,1.51045389377619,0.186878828829322,6,4,"Effect on Mean
+(SMD)",55.2090292741573,Invertebrate richness,Not significant,No evidence,p ≥ 0.1,6 (4)
+invertebrate_richness,-0.294480848568364,-1.03415102264811,0.44518932551138,0.228846751474572,6,4,"Effect on Heterogeneity
+(lnCVR)",4.2535854702496e-08,Invertebrate richness,Not significant,No evidence,p ≥ 0.1,6 (4)
+invertebrate_abundance,0.448139352399251,-0.175333173088782,1.07161187788728,0.106202291004056,18,6,"Effect on Mean
+(SMD)",45.924969225318,Invertebrate abundance,Not significant,No evidence,p ≥ 0.1,18 (6)
+invertebrate_abundance,-0.0283228420484052,-0.515081453123213,0.458435769026403,0.864903003989416,18,6,"Effect on Heterogeneity
+(lnCVR)",8.69155596210831,Invertebrate abundance,Not significant,No evidence,p ≥ 0.1,18 (6)

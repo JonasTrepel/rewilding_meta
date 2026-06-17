@@ -173,6 +173,9 @@ dt_res_plot = dt_res %>%
     label_n = reorder(label_n, estimate)) 
 
 
+fwrite(dt_res_plot, "builds/model_results/main_model_results_plot_data.csv")
+
+
 dt_plot_points = dt %>%
   pivot_longer(cols = c(yi_cvr, yi_smdh), 
                names_to = "effect_size", values_to = "yi") %>% 

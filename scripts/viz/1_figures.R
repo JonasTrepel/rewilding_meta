@@ -114,6 +114,8 @@ library(sf)
 library(rnaturalearth)
 library(scico)
 
+dt <- fread("data/processed_data/clean_rewilding_meta_dataset.csv")
+
 world <- ne_countries(scale = "medium", returnclass = "sf") %>%
   filter(continent != "Antarctica")
 
