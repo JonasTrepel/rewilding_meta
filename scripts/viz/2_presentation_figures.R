@@ -96,6 +96,7 @@ p_sp_biomass = dt_mega_raw %>%
   theme_minimal() +
   theme(panel.grid = element_blank(), 
         axis.text.x = element_text(size = 8),
+        axis.text.y = element_text(size = 12),
         plot.background  = element_rect(fill = "white", color = NA),
         panel.background = element_rect(fill = "white", color = NA))
 p_sp_biomass
@@ -129,6 +130,7 @@ p_total_biomass <- dt_mega %>%
   theme(panel.grid = element_blank(), 
        # axis.text.y = element_blank(), 
         axis.text.x = element_text(size = 8),
+        axis.text.y = element_text(size = 12),
         plot.background  = element_rect(fill = "white", color = NA),
         panel.background = element_rect(fill = "white", color = NA) )
 p_total_biomass  
@@ -151,7 +153,7 @@ library(patchwork)
 
 
 ggsave(plot = p_bc, "builds/plots/presentations/animal_biomass.png", dpi = 900, 
-       width = 6.65, height = 5)
+       width = 7.315, height = 5.5)
 
 
 # 3. Results -----------------------------
