@@ -223,12 +223,12 @@ p_res <- dt_res_plot %>%
   #                              "Moderate evidence" = "#C7504B", 
   #                              "Weak evidence" = "#DF714F",
   #                              "No evidence" = "wheat3")) +
-  scale_fill_manual(values = c("p < 0.05" = "olivedrab3",
-                               "p < 0.1" = "darkolivegreen4",
-                               "p ≥ 0.1" = "wheat3")) +
-  scale_color_manual(values = c("p < 0.05" = "olivedrab3",
-                                "p < 0.1" = "darkolivegreen4",
-                                "p ≥ 0.1" = "wheat3")) +
+  scale_fill_manual(values = c("p < 0.05" = "#355E26",
+                               "p < 0.1" = "#728202",
+                               "p ≥ 0.1" = "#E1C76D")) +
+  scale_color_manual(values = c("p < 0.05" = "#355E26",
+                                "p < 0.1" = "#728202",
+                                "p ≥ 0.1" = "#E1C76D")) +
   geom_text(data = dt_annot,
             aes(x = -5,
                 y = clean_response,
